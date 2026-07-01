@@ -1,0 +1,20 @@
+{
+    "timeline": [
+        { "year": "2025", "title": "Started C Programming", "description": "Learned the fundamentals of programming and memory management." },
+        { "year": "2025", "title": "Web Fundamentals", "description": "Mastered HTML, CSS, and basic JavaScript." },
+        { "year": "2025", "title": "Version Control", "description": "Learned Git and GitHub for project management." },
+        { "year": "2026", "title": "Python & DSA", "description": "Deepened knowledge in Python and Data Structures & Algorithms." },
+        { "year": "2026", "title": "Frontend Frameworks", "description": "Started building projects with React and Tailwind CSS." },
+        { "year": "2026", "title": "Backend & AI/ML", "description": "Currently exploring Node.js and introductory Machine Learning." }
+    ],
+    "futureGoals": [
+        "System Design",
+        "Docker & Containerization",
+        "AWS Cloud Basics",
+        "Kubernetes",
+        "Microservices Architecture",
+        "Deep Learning",
+        "LLMs",
+        "MLOps"
+    ]
+}

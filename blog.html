@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Nithya Lekhana</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+
+    <header class="navbar-wrapper">
+        <div class="container navbar-inner">
+            <div class="logo">
+                <img src="icon_nobg.png" alt="Logo" width="32" height="32" style="border-radius: 50%; object-fit: cover; background: var(--primary); padding: 2px;">
+                <span>Nithya Lekhana</span>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="services.html">Services</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle">More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                    <div class="dropdown-menu">
+                        <a href="resume.html">Resume</a>
+                        <a href="skills.html">Skills & Certificates</a>
+                        <a href="awards.html">Awards</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="faq.html">FAQ</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary">Contact Me</a>
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    
+    <main class="container" style="padding-top: 100px; padding-bottom: 120px;">
+        
+        <style>
+            /* Local Styles for Blog Page */
+            .blog-hero { text-align: center; margin-bottom: 80px; }
+            .blog-hero h1 {
+                font-size: 4rem;
+                font-weight: 800;
+                letter-spacing: -0.03em;
+                margin-bottom: 24px;
+                background: linear-gradient(to right, var(--primary-dark), var(--primary));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            .blog-hero h2 {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: var(--text-dark);
+                margin-bottom: 16px;
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .blog-hero p {
+                font-size: 1.1rem;
+                color: var(--text-muted);
+                max-width: 800px;
+                margin: 0 auto 32px auto;
+                line-height: 1.8;
+            }
+            .blog-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+            
+            /* Section Headers */
+            .section-header {
+                font-size: 2rem;
+                font-weight: 700;
+                color: var(--text-dark);
+                margin-bottom: 32px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+            
+            /* Featured Article */
+            .featured-article {
+                background: rgba(255, 255, 255, 0.7);
+                backdrop-filter: blur(12px);
+                border: 1px solid var(--border);
+                border-radius: 24px;
+                padding: 48px;
+                margin-bottom: 80px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                position: relative;
+                overflow: hidden;
+            }
+            .featured-article:hover {
+                transform: translateY(-5px);
+                box-shadow: var(--clay-shadow);
+                border-color: var(--primary);
+            }
+            .featured-badge {
+                position: absolute;
+                top: 24px; right: 24px;
+                background: linear-gradient(135deg, var(--primary), var(--secondary));
+                color: white;
+                padding: 6px 16px;
+                border-radius: 100px;
+                font-size: 0.85rem;
+                font-weight: 700;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                box-shadow: 0 4px 12px rgba(112,71,235,0.3);
+            }
+            .meta-tags { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+            .meta-tag {
+                background: var(--surface);
+                color: var(--primary-dark);
+                padding: 6px 12px;
+                border-radius: 8px;
+                font-size: 0.85rem;
+                font-weight: 600;
+                border: 1px solid var(--border);
+            }
+            
+            /* Grid Layouts */
+            .article-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
+                margin-bottom: 80px;
+            }
+            @media (max-width: 992px) { .article-grid { grid-template-columns: 1fr; } }
+            
+            .article-card {
+                background: var(--clay-bg);
+                border: 1px solid var(--border);
+                border-radius: 20px;
+                padding: 32px;
+                transition: all 0.3s ease;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+            .article-card:hover {
+                border-color: var(--primary);
+                transform: translateY(-5px);
+                box-shadow: var(--clay-shadow);
+            }
+            .article-card h3 { font-size: 1.5rem; margin-bottom: 16px; line-height: 1.4; color: var(--text-dark); }
+            .article-card p { color: var(--text-muted); line-height: 1.6; margin-bottom: 24px; flex-grow: 1; }
+            
+            /* Tags */
+            .tag-pill {
+                display: inline-block;
+                padding: 4px 12px;
+                background: rgba(112, 71, 235, 0.1);
+                color: var(--primary);
+                border-radius: 100px;
+                font-size: 0.8rem;
+                font-weight: 600;
+                margin-right: 8px;
+                margin-bottom: 8px;
+            }
+            
+            /* Learning Series */
+            .series-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 24px;
+                margin-bottom: 80px;
+            }
+            @media (max-width: 1024px) { .series-grid { grid-template-columns: repeat(2, 1fr); } }
+            @media (max-width: 600px) { .series-grid { grid-template-columns: 1fr; } }
+            
+            .series-card {
+                background: white;
+                border: 1px solid var(--border);
+                border-radius: 16px;
+                padding: 24px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            }
+            .series-card h4 { font-size: 1.2rem; color: var(--text-dark); border-bottom: 2px solid var(--bg); padding-bottom: 12px; margin-bottom: 16px; }
+            .series-list { list-style: none; padding: 0; margin: 0; }
+            .series-list li {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 12px;
+                color: var(--text-muted);
+                font-size: 0.95rem;
+            }
+            .series-list li svg { color: var(--success, #22C55E); flex-shrink: 0; }
+            
+            /* Categories & Topics */
+            .tax-section { margin-bottom: 80px; }
+            .cat-pill {
+                display: inline-block;
+                padding: 12px 24px;
+                background: white;
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                font-weight: 600;
+                color: var(--text-dark);
+                margin: 0 12px 12px 0;
+                transition: all 0.2s ease;
+                cursor: pointer;
+            }
+            .cat-pill:hover { border-color: var(--primary); color: var(--primary); background: rgba(112,71,235,0.05); }
+            
+            /* Reading Goals & Stats */
+            .split-section { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 80px; }
+            @media (max-width: 992px) { .split-section { grid-template-columns: 1fr; } }
+            
+            .book-list { display: flex; flex-direction: column; gap: 12px; }
+            .book-item {
+                background: var(--surface);
+                padding: 16px;
+                border-radius: 12px;
+                border-left: 4px solid var(--primary);
+                font-weight: 600;
+                color: var(--text-dark);
+            }
+            
+            .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+            .stat-card {
+                background: white;
+                border: 1px solid var(--border);
+                border-radius: 16px;
+                padding: 24px;
+                text-align: center;
+            }
+            .stat-num { font-size: 2.5rem; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
+            .stat-label { font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em; }
+            
+            /* Roadmap */
+            .roadmap-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-bottom: 80px; }
+            @media (max-width: 768px) { .roadmap-grid { grid-template-columns: 1fr; } }
+            .roadmap-col h4 { margin-bottom: 20px; color: var(--primary-dark); display: flex; align-items: center; gap: 12px; }
+            .roadmap-col ul { list-style: none; padding: 0; }
+            .roadmap-col li {
+                position: relative;
+                padding-left: 24px;
+                margin-bottom: 16px;
+                color: var(--text-muted);
+                line-height: 1.5;
+            }
+            .roadmap-col li::before {
+                content: '';
+                position: absolute;
+                left: 0; top: 8px;
+                width: 8px; height: 8px;
+                border-radius: 50%;
+                background: var(--border);
+            }
+            
+            /* Newsletter */
+            .newsletter-box {
+                background: linear-gradient(135deg, rgba(112, 71, 235, 0.1), rgba(112, 71, 235, 0.05));
+                border: 1px solid rgba(112, 71, 235, 0.2);
+                border-radius: 24px;
+                padding: 48px;
+                text-align: center;
+                margin-bottom: 80px;
+            }
+            .newsletter-form {
+                display: flex; gap: 12px; max-width: 500px; margin: 24px auto 0 auto;
+            }
+            .nl-input { flex-grow: 1; padding: 16px 24px; border-radius: 100px; border: 1px solid var(--border); font-family: inherit; font-size: 1rem; }
+            .nl-btn { padding: 16px 32px; border-radius: 100px; background: var(--primary); color: white; border: none; font-weight: 700; cursor: pointer; }
+            @media (max-width: 600px) { .newsletter-form { flex-direction: column; } }
+            
+            /* Philosophy */
+            .philosophy-box {
+                background: white;
+                border-left: 6px solid var(--primary);
+                padding: 40px;
+                border-radius: 0 16px 16px 0;
+                box-shadow: var(--clay-shadow);
+                margin-bottom: 80px;
+            }
+            .philosophy-box h3 { font-size: 1.8rem; margin-bottom: 16px; color: var(--text-dark); }
+            .philosophy-box p { font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); }
+            
+            /* Final CTA */
+            .final-cta { text-align: center; padding: 48px 0; }
+            .final-cta h2 { font-size: 2.5rem; margin-bottom: 32px; line-height: 1.4; color: var(--text-dark); }
+        </style>
+
+        <!-- Hero Section -->
+        <section class="blog-hero">
+            <h1>Engineering Journal</h1>
+            <h2>Documenting my journey through software engineering, full-stack development, artificial intelligence, and everything I learn while building real-world projects.</h2>
+            <p>This blog is my learning journal. Here I share project breakdowns, technical concepts, coding experiences, lessons learned, and practical insights from my journey as a Computer Science Engineering student. My goal is to create clear, beginner-friendly content that helps others learn while strengthening my own understanding.</p>
+            <div class="blog-actions">
+                <a href="#latest" class="btn btn-primary">Read Latest Article</a>
+                <a href="#categories" class="btn btn-secondary">Explore Categories</a>
+            </div>
+        </section>
+
+        <!-- Featured Article -->
+        <section class="featured-article">
+            <div class="featured-badge">Featured</div>
+            <div class="meta-tags">
+                <span class="meta-tag">Software Engineering</span>
+                <span class="meta-tag">10 min read</span>
+                <span class="meta-tag" style="background: rgba(34, 197, 94, 0.1); color: #16a34a; border-color: rgba(34, 197, 94, 0.2);">Coming Soon</span>
+            </div>
+            <h2 style="font-size: 2.5rem; color: var(--text-dark); line-height: 1.2;">Building My Portfolio: From Idea to Deployment</h2>
+            <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.6; max-width: 90%;">A complete walkthrough of how I planned, designed, developed, and deployed my personal portfolio website while focusing on clean architecture, responsiveness, and automation using the GitHub API.</p>
+        </section>
+
+        <!-- Latest Articles -->
+        <h2 class="section-header" id="latest">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            Latest Articles
+        </h2>
+        <section class="article-grid">
+            
+            <article class="article-card">
+                <h3>How I Built My First Portfolio Website</h3>
+                <p>An in-depth breakdown of my portfolio development journey, from planning and UI design to implementation, deployment, and future improvements.</p>
+                <div>
+                    <span class="tag-pill">Portfolio</span>
+                    <span class="tag-pill">HTML</span>
+                    <span class="tag-pill">CSS</span>
+                    <span class="tag-pill">JavaScript</span>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <h3>Lessons I Learned While Building SkillSwap</h3>
+                <p>Key technical and design lessons I learned while planning and developing a student skill exchange platform, including architecture, scalability, and user experience.</p>
+                <div>
+                    <span class="tag-pill">Software Engineering</span>
+                    <span class="tag-pill">Project</span>
+                    <span class="tag-pill">Architecture</span>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <h3>My Roadmap to Becoming a Software Engineer</h3>
+                <p>The learning strategy I'm following to strengthen my programming fundamentals, data structures, full-stack development, AI/ML, and system design skills.</p>
+                <div>
+                    <span class="tag-pill">Career</span>
+                    <span class="tag-pill">Roadmap</span>
+                    <span class="tag-pill">Learning</span>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <h3>Why Structured Problem Solving Matters</h3>
+                <p>How breaking down complex problems into smaller steps improves code quality, debugging, and software architecture.</p>
+                <div>
+                    <span class="tag-pill">DSA</span>
+                    <span class="tag-pill">Problem Solving</span>
+                    <span class="tag-pill">Programming</span>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <h3>Turning College Projects into Portfolio Projects</h3>
+                <p>Learn how to transform academic assignments into professional portfolio projects that demonstrate real-world software engineering skills.</p>
+                <div>
+                    <span class="tag-pill">Portfolio</span>
+                    <span class="tag-pill">Projects</span>
+                    <span class="tag-pill">Students</span>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <h3>My AI & Machine Learning Learning Journey</h3>
+                <p>A roadmap of how I'm learning artificial intelligence and machine learning while balancing software engineering fundamentals.</p>
+                <div>
+                    <span class="tag-pill">AI</span>
+                    <span class="tag-pill">Machine Learning</span>
+                    <span class="tag-pill">Python</span>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Learning Series -->
+        <h2 class="section-header">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+            Learning Series
+        </h2>
+        <section class="series-grid">
+            <div class="series-card">
+                <h4>Software Engineering</h4>
+                <ul class="series-list">
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Clean Code</li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Git & GitHub</li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> APIs</li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Authentication</li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> System Design</li>
+                </ul>
+            </div>
+            <div class="series-card">
+                <h4>Web Development</h4>
+                <ul class="series-list">
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> HTML</li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> CSS</li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> JavaScript</li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> React</li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Backend</li>
+                </ul>
+            </div>
+            <div class="series-card">
+                <h4>Artificial Intelligence</h4>
+                <ul class="series-list">
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Python</li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> NumPy</li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Pandas</li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Machine Learning</li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Deep Learning</li>
+                </ul>
+            </div>
+            <div class="series-card">
+                <h4>Career</h4>
+                <ul class="series-list">
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Internship Prep</li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Resume</li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> LinkedIn</li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> GitHub</li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Portfolio</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Categories & Popular Topics -->
+        <h2 class="section-header" id="categories">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            Categories & Topics
+        </h2>
+        <section class="tax-section">
+            <div style="margin-bottom: 24px;">
+                <span class="cat-pill">Software Engineering</span>
+                <span class="cat-pill">Artificial Intelligence</span>
+                <span class="cat-pill">Machine Learning</span>
+                <span class="cat-pill">Web Development</span>
+                <span class="cat-pill">Programming</span>
+                <span class="cat-pill">Projects</span>
+                <span class="cat-pill">Career</span>
+                <span class="cat-pill">Open Source</span>
+                <span class="cat-pill">GitHub</span>
+                <span class="cat-pill">College Journey</span>
+            </div>
+            <div>
+                <span style="color: var(--text-muted); margin-right: 16px; font-weight: 600;">Popular:</span>
+                <span class="tag-pill">Python</span>
+                <span class="tag-pill">JavaScript</span>
+                <span class="tag-pill">React</span>
+                <span class="tag-pill">Node.js</span>
+                <span class="tag-pill">Git</span>
+                <span class="tag-pill">GitHub</span>
+                <span class="tag-pill">Portfolio</span>
+                <span class="tag-pill">DSA</span>
+                <span class="tag-pill">System Design</span>
+                <span class="tag-pill">AI</span>
+            </div>
+        </section>
+
+        <!-- Split: Reading Goals & Stats -->
+        <section class="split-section">
+            <div>
+                <h2 class="section-header">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    Reading Goals
+                </h2>
+                <div class="book-list">
+                    <div class="book-item">Currently Reading: Clean Code</div>
+                    <div class="book-item">Designing Data-Intensive Applications</div>
+                    <div class="book-item">The Pragmatic Programmer</div>
+                    <div class="book-item">Introduction to Algorithms</div>
+                </div>
+            </div>
+            
+            <div>
+                <h2 class="section-header">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    Blog Statistics
+                </h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-num">0+</div>
+                        <div class="stat-label">Articles</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num">10</div>
+                        <div class="stat-label">Categories</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num">50+</div>
+                        <div class="stat-label">Topics</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num">∞</div>
+                        <div class="stat-label">Learning</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Future Articles Roadmap -->
+        <h2 class="section-header">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            Future Articles Roadmap
+        </h2>
+        <section class="roadmap-grid">
+            <div class="roadmap-col">
+                <h4><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Software Engineering</h4>
+                <ul>
+                    <li>Understanding System Design Fundamentals</li>
+                    <li>Writing Clean and Maintainable Code</li>
+                    <li>REST API Design Best Practices</li>
+                    <li>Authentication Explained</li>
+                    <li>My Git Workflow</li>
+                </ul>
+            </div>
+            <div class="roadmap-col">
+                <h4><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg> Web Development</h4>
+                <ul>
+                    <li>Learning React Step by Step</li>
+                    <li>Building Responsive Websites</li>
+                    <li>Tailwind CSS Guide</li>
+                    <li>Deploying Projects</li>
+                    <li>Frontend Performance Tips</li>
+                </ul>
+            </div>
+            <div class="roadmap-col">
+                <h4><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg> AI & ML</h4>
+                <ul>
+                    <li>Python for Machine Learning</li>
+                    <li>My NumPy Notes</li>
+                    <li>Pandas Explained</li>
+                    <li>First Machine Learning Model</li>
+                    <li>Building AI Projects</li>
+                </ul>
+            </div>
+            <div class="roadmap-col">
+                <h4><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path><path d="M12 14a4 4 0 0 0-4-4 4 4 0 0 0-4 4v2"></path></svg> Career</h4>
+                <ul>
+                    <li>Preparing for Software Engineering Internships</li>
+                    <li>Building an Impressive GitHub Profile</li>
+                    <li>Creating a Strong Resume</li>
+                    <li>Technical Interview Preparation</li>
+                    <li>Productivity Tips for Students</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Newsletter (Future) -->
+        <section class="newsletter-box">
+            <h2 style="font-size: 2rem; color: var(--text-dark); margin-bottom: 16px;">Stay Updated</h2>
+            <p style="color: var(--text-muted); font-size: 1.1rem;">Follow my learning journey and get notified whenever I publish a new article.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Newsletter feature coming soon!');">
+                <input type="email" class="nl-input" placeholder="Email Address" required>
+                <button type="submit" class="nl-btn">Subscribe</button>
+            </form>
+        </section>
+
+        <!-- Blog Philosophy -->
+        <section class="philosophy-box">
+            <h3>Why I Write</h3>
+            <p>I believe one of the best ways to learn is by teaching. Writing about what I build and learn helps me deepen my understanding while creating practical resources that other students and aspiring developers can benefit from. Every article reflects real experiences, lessons learned, and continuous growth throughout my software engineering journey.</p>
+        </section>
+
+        <!-- CTA -->
+        <section class="final-cta">
+            <h2>
+                Learning Never Stops.<br>
+                <span style="color: var(--primary);">Every project teaches something new.</span><br>
+                Every challenge builds experience.<br>
+                <span style="color: var(--primary-dark);">Every article documents the journey.</span>
+            </h2>
+            <a href="projects.html" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem; border-radius: 100px;">Explore My Projects</a>
+        </section>
+
+    </main>
+<!-- Mega Footer Dashboard -->
+    <link rel="stylesheet" href="mega-footer.css">
+    
+    
+    
+    <!-- Mega Footer Dashboard -->
+    <link rel="stylesheet" href="mega-footer.css">
+    
+
+    
+    <!-- Mega Footer Dashboard -->
+    <link rel="stylesheet" href="mega-footer.css">
+    <footer class="mega-footer">
+        <div class="mega-footer-container">
+            <!-- Section 1: CTA Banner -->
+            <div class="mf-cta-banner">
+                <div class="mf-cta-text">
+                    <h3>Let's Build Something Amazing Together</h3>
+                    <div class="mf-cta-tags">
+                        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10.06 10.06 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Internships</span>
+                        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10.06 10.06 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Collaborations</span>
+                        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10.06 10.06 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Open Source</span>
+                        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10.06 10.06 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Research</span>
+                    </div>
+                </div>
+                <div class="mf-cta-actions">
+                    <a href="resume.html" class="btn">View Resume</a>
+                    <a href="contact.html" class="btn">Contact Me</a>
+                    <a href="mailto:nithyalekhana04@gmail.com" class="btn">Schedule Meeting</a>
+                </div>
+            </div>
+
+            <!-- Sections 2-5: Main Grid -->
+            <div class="mf-grid-main" style="margin-bottom: 32px;">
+                <!-- Col 1: Personal Card -->
+                <div class="mf-personal">
+                    <div class="logo" style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+                        <img src="icon_nobg.png" alt="Logo" width="48" height="48" style="border-radius: 50%; object-fit: cover; background: var(--primary); padding: 3px; box-shadow: 0 4px 12px rgba(112, 71, 235, 0.2);">
+                        <span style="font-size: 1.5rem; font-weight: 700;">Nithya Lekhana</span>
+                    </div>
+                    <p style="font-weight: 600; color: var(--text-dark); margin-bottom: 8px;">Computer Science Engineering Student</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">Computer Science Engineering student passionate about software engineering, full-stack development, and artificial intelligence. Dedicated to building impactful digital solutions through clean code, thoughtful design, and continuous learning.</p>
+                    <p style="font-size: 0.85rem; margin-top: 8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Hyderabad, India</p>
+                    <div class="mf-status">
+                        <div class="mf-status-dot"></div> Available for Internship
+                    </div>
+                    <div style="display:flex; gap:16px;">
+                        <a href="https://github.com/nithya-lekhana" target="_blank" style="color: var(--text-muted);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                        <a href="https://linkedin.com/in/nithya-lekhana" target="_blank" style="color: var(--text-muted);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                        <a href="mailto:nithyalekhana04@gmail.com" style="color: var(--text-muted);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+                    </div>
+                </div>
+                
+                <!-- Col 2: Explore -->
+                <div class="mf-col">
+                    <h4>Explore</h4>
+                    <ul class="mf-link-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="resume.html">Experience & Education</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="skills.html">Skills & Achievements</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Projects -->
+                <div class="mf-col">
+                    <h4>Projects</h4>
+                    <ul class="mf-link-list">
+                        <li><a href="projects.html">Featured Projects</a></li>
+                        <li><a href="https://github.com/nithya-lekhana?tab=repositories" target="_blank">All Repositories</a></li>
+                        <li><a href="projects.html">Open Source</a></li>
+                        <li><a href="projects.html">Case Studies</a></li>
+                        <li><a href="projects.html">Most Starred</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Resources -->
+                <div class="mf-col">
+                    <h4>Resources</h4>
+                    <ul class="mf-link-list">
+                        <li><a href="resume.html">Resume</a></li>
+                        <li><a href="skills.html">Certificates</a></li>
+                        <li><a href="blog.html">Blog & Articles</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="awards.html">Downloads</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="mf-bottom" style="border-top: 1px solid var(--border); padding-top: 32px;">
+                <div>
+                    &copy; 2026 Nithya Lekhana.<br>
+                    <span style="font-size: 0.75rem; margin-top: 8px; display: inline-block;">Portfolio Version v2.4.1 • Built with HTML/CSS/JS</span>
+                </div>
+                <div class="mf-bottom-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Accessibility</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+{
+    "categories": [
+        {
+            "name": "Programming Languages",
+            "skills": [
+                { "name": "Python", "level": "Intermediate", "progress": 70 },
+                { "name": "JavaScript", "level": "Intermediate", "progress": 75 },
+                { "name": "TypeScript", "level": "Beginner", "progress": 40 },
+                { "name": "C", "level": "Intermediate", "progress": 65 },
+                { "name": "C++", "level": "Beginner", "progress": 40 },
+                { "name": "Java", "level": "Beginner", "progress": 35 },
+                { "name": "SQL", "level": "Intermediate", "progress": 60 }
+            ]
+        },
+        {
+            "name": "Frontend Development",
+            "skills": [
+                { "name": "HTML5", "level": "Advanced", "progress": 90 },
+                { "name": "CSS3", "level": "Advanced", "progress": 85 },
+                { "name": "React", "level": "Intermediate", "progress": 65 },
+                { "name": "Next.js", "level": "Beginner", "progress": 30 },
+                { "name": "Tailwind CSS", "level": "Intermediate", "progress": 70 },
+                { "name": "Bootstrap", "level": "Intermediate", "progress": 60 },
+                { "name": "Vite", "level": "Intermediate", "progress": 65 }
+            ]
+        },
+        {
+            "name": "Backend Development",
+            "skills": [
+                { "name": "Node.js", "level": "Intermediate", "progress": 60 },
+                { "name": "Express.js", "level": "Intermediate", "progress": 65 },
+                { "name": "Flask", "level": "Beginner", "progress": 40 },
+                { "name": "FastAPI", "level": "Beginner", "progress": 30 },
+                { "name": "REST APIs", "level": "Intermediate", "progress": 70 }
+            ]
+        },
+        {
+            "name": "Artificial Intelligence & ML",
+            "skills": [
+                { "name": "NumPy", "level": "Intermediate", "progress": 65 },
+                { "name": "Pandas", "level": "Intermediate", "progress": 60 },
+                { "name": "Scikit-learn", "level": "Beginner", "progress": 45 },
+                { "name": "TensorFlow", "level": "Beginner", "progress": 30 },
+                { "name": "Keras", "level": "Beginner", "progress": 25 },
+                { "name": "OpenCV", "level": "Beginner", "progress": 20 },
+                { "name": "Matplotlib", "level": "Intermediate", "progress": 60 }
+            ]
+        },
+        {
+            "name": "Databases",
+            "skills": [
+                { "name": "MySQL", "level": "Intermediate", "progress": 70 },
+                { "name": "PostgreSQL", "level": "Beginner", "progress": 40 },
+                { "name": "MongoDB", "level": "Intermediate", "progress": 60 },
+                { "name": "Firebase", "level": "Beginner", "progress": 40 }
+            ]
+        },
+        {
+            "name": "Cloud & Deployment",
+            "skills": [
+                { "name": "GitHub Pages", "level": "Advanced", "progress": 85 },
+                { "name": "Vercel", "level": "Intermediate", "progress": 70 },
+                { "name": "Netlify", "level": "Intermediate", "progress": 65 },
+                { "name": "Render", "level": "Beginner", "progress": 40 },
+                { "name": "Docker", "level": "Learning", "progress": 20 }
+            ]
+        },
+        {
+            "name": "Tools & Version Control",
+            "skills": [
+                { "name": "Git", "level": "Intermediate", "progress": 75 },
+                { "name": "GitHub", "level": "Intermediate", "progress": 80 },
+                { "name": "VS Code", "level": "Advanced", "progress": 90 },
+                { "name": "Postman", "level": "Intermediate", "progress": 65 },
+                { "name": "Figma", "level": "Intermediate", "progress": 60 },
+                { "name": "Linux", "level": "Intermediate", "progress": 55 }
+            ]
+        }
+    ],
+    "softSkills": [
+        "Problem Solving",
+        "Critical Thinking",
+        "Communication",
+        "Teamwork",
+        "Leadership",
+        "Time Management",
+        "Adaptability",
+        "Continuous Learning"
+    ],
+    "languages": [
+        "English",
+        "Hindi",
+        "Telugu"
+    ],
+    "currentlyLearning": [
+        "Machine Learning",
+        "Deep Learning",
+        "Docker",
+        "System Design",
+        "AWS (Basics)"
+    ]
+}

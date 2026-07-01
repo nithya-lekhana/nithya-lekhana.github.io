@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Nithya Lekhana</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+
+    <header class="navbar-wrapper">
+        <div class="container navbar-inner">
+            <div class="logo">
+                <img src="icon_nobg.png" alt="Logo" width="32" height="32" style="border-radius: 50%; object-fit: cover; background: var(--primary); padding: 2px;">
+                <span>Nithya Lekhana</span>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html" style="color: var(--primary);">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="services.html">Services</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle">More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                    <div class="dropdown-menu">
+                        <a href="resume.html">Resume</a>
+                        <a href="skills.html">Skills & Certificates</a>
+                        <a href="awards.html">Awards</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="faq.html">FAQ</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary">Contact Me</a>
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 64px; padding-bottom: 80px;">
+        
+        <!-- Card 1: Intro & Story -->
+        <div class="feature-card" style="max-width: 1100px; margin: 0 auto 40px; padding: 64px 48px; text-align: left;">
+            <div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start;">
+                
+                <!-- Quick Facts Sidebar -->
+                <div style="flex: 1; min-width: 280px;">
+                    <div style="background: var(--bg-white); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--clay-shadow-inset);">
+                        <h3 style="margin-bottom: 24px; color: var(--primary); font-size: 1.5rem; text-align: center;">Quick Facts</h3>
+                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 16px; font-size: 0.95rem; color: var(--text-dark);">
+                            <li><strong>Name:</strong><br> Nithya Lekhana</li>
+                            <li><strong>Role:</strong><br> CSE Student</li>
+                            <li><strong>University:</strong><br> Woxsen University</li>
+                            <li><strong>Specialization:</strong><br> Artificial Intelligence & Machine Learning</li>
+                            <li><strong>Interests:</strong><br> Software Eng, AI/ML, Full-Stack</li>
+                            <li><strong>Languages:</strong><br> Python, JS, C, HTML, CSS</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Hero & Story -->
+                <div style="flex: 2; min-width: 300px;">
+                    <h1 style="margin-bottom: 16px; font-size: 3rem; line-height: 1.2;">Hi, I'm <span class="text-primary">Nithya Lekhana</span></h1>
+                    <h2 style="font-size: 1.25rem; font-weight: 500; color: var(--text-muted); margin-bottom: 24px; line-height: 1.6;">A Computer Science Engineering student specializing in Artificial Intelligence and Machine Learning.</h2>
+                    <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 32px;">I enjoy building scalable software, modern web applications, and AI-powered solutions that solve real-world problems.</p>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 48px;">
+                        <a href="resume.html" class="btn btn-primary">View Resume</a>
+                        <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+                    </div>
+
+                    <h2 style="margin-bottom: 24px; font-size: 2rem; color: var(--text-dark);">My Story</h2>
+                    <div style="display: flex; flex-direction: column; gap: 24px; color: var(--text-dark); line-height: 1.8;">
+                        <div>
+                            <strong style="color: var(--primary); font-size: 1.125rem;">My Beginning</strong>
+                            <p>My interest in technology sparked from a desire to understand how digital systems operate behind the scenes. I wanted to move from being a consumer of technology to a creator.</p>
+                        </div>
+                        <div>
+                            <strong style="color: var(--primary); font-size: 1.125rem;">Discovering Programming</strong>
+                            <p>As I wrote my first lines of code, I realized programming is just structured problem-solving. This logical approach perfectly matched my analytical mindset.</p>
+                        </div>
+                        <div>
+                            <strong style="color: var(--primary); font-size: 1.125rem;">Why AI & Software Engineering</strong>
+                            <p>I chose AI & ML because I believe data-driven systems are the future. Combining this with full-stack engineering allows me to build intelligent applications that are accessible to end-users.</p>
+                        </div>
+                        <div>
+                            <strong style="color: var(--primary); font-size: 1.125rem;">My Current Journey</strong>
+                            <p>Today, I am focused on strengthening my foundational knowledge, building portfolio-worthy projects, and learning how to engineer scalable systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: Expertise & Philosophy -->
+        <div class="feature-card" style="max-width: 1100px; margin: 0 auto 40px; padding: 64px 48px; text-align: left;">
+            <h2 style="margin-bottom: 32px; font-size: 2rem; text-align: center;">Technical Expertise</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; margin-bottom: 64px;">
+                <div>
+                    <h4 style="margin-bottom: 16px; color: var(--primary);">Languages</h4>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span class="badge" style="background: var(--bg-white); color: var(--text-dark);">Python</span>
+                        <span class="badge" style="background: var(--bg-white); color: var(--text-dark);">JavaScript</span>
+                        <span class="badge" style="background: var(--bg-white); color: var(--text-dark);">C</span>
+                        <span class="badge" style="background: var(--bg-white); color: var(--text-dark);">Java</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 16px; color: var(--primary);">Frontend</h4>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span class="badge" style="background: var(--bg-white); color: var(--text-dark);">HTML & CSS</span>
+                        <span class="badge" style="background: var(--bg-white); color: var(--text-dark);">React</span>
+                        <span class="badge" style="background: var(--bg-white); color: var(--text-dark);">Tailwind CSS</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 16px; color: var(--primary);">Backend</h4>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span class="badge" style="background: var(--bg-white); color: var(--text-dark);">Node.js</span>
+                        <span class="badge" style="background: var(--bg-white); color: var(--text-dark);">Express</span>
+                        <span class="badge" style="background: var(--bg-white); color: var(--text-dark);">Flask/FastAPI</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 16px; color: var(--primary);">Database & Tools</h4>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span class="badge" style="background: var(--bg-white); color: var(--text-dark);">MySQL</span>
+                        <span class="badge" style="background: var(--bg-white); color: var(--text-dark);">PostgreSQL</span>
+                        <span class="badge" style="background: var(--bg-white); color: var(--text-dark);">MongoDB</span>
+                        <span class="badge" style="background: var(--bg-white); color: var(--text-dark);">Git & GitHub</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 16px; color: var(--primary);">AI / ML</h4>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span class="badge" style="background: var(--bg-white); color: var(--text-dark);">NumPy & Pandas</span>
+                        <span class="badge" style="background: var(--bg-white); color: var(--text-dark);">Scikit-learn</span>
+                        <span class="badge" style="background: var(--bg-white); color: var(--text-dark);">TensorFlow</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 48px;">
+                <div>
+                    <h3 style="margin-bottom: 16px; color: var(--text-dark);">What I Build</h3>
+                    <ul style="list-style-position: inside; line-height: 1.8; color: var(--text-muted);">
+                        <li>Full-stack web applications</li>
+                        <li>AI-powered applications</li>
+                        <li>Portfolio websites</li>
+                        <li>Student productivity tools</li>
+                        <li>Automation software & APIs</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 16px; color: var(--text-dark);">Engineering Philosophy</h3>
+                    <p style="line-height: 1.8; color: var(--text-muted);">I believe software should be simple, maintainable, scalable, and user-focused. I enjoy understanding problems before writing code and building solutions that are clean, reusable, and production-ready.</p>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 16px; color: var(--text-dark);">Development Workflow</h3>
+                    <ol style="list-style-position: inside; line-height: 1.8; color: var(--text-muted);">
+                        <li>Understand the problem & Research</li>
+                        <li>Design architecture & Plan database</li>
+                        <li>Build MVP & Test</li>
+                        <li>Optimize, Deploy & Maintain</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: Timeline & Goals -->
+        <div class="feature-card" style="max-width: 1100px; margin: 0 auto; padding: 64px 48px; text-align: left;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 64px;">
+                
+                <!-- Left Column -->
+                <div>
+                    <h3 style="margin-bottom: 24px; color: var(--primary); font-size: 1.75rem;">Education & Timeline</h3>
+                    
+                    <div style="margin-bottom: 32px; border-left: 2px solid var(--border); padding-left: 16px;">
+                        <h4 style="margin-bottom: 8px;">B.Tech Computer Science Engineering</h4>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 8px;">Woxsen University | 2025–2029</p>
+                        <p style="color: var(--text-dark);">Specialization: AI & ML</p>
+                    </div>
+
+                    <div style="border-left: 2px solid var(--border); padding-left: 16px;">
+                        <div style="margin-bottom: 24px;">
+                            <strong style="color: var(--primary);">2025</strong>
+                            <p style="color: var(--text-dark); margin-top: 4px;">Started B.Tech Journey</p>
+                        </div>
+                        <div style="margin-bottom: 24px;">
+                            <strong style="color: var(--primary);">2026</strong>
+                            <p style="color: var(--text-dark); margin-top: 4px;">Built SkillSwap Platform, Personal Portfolio, and mastered core JavaScript.</p>
+                        </div>
+                        <div>
+                            <strong style="color: var(--primary);">2027</strong>
+                            <p style="color: var(--text-dark); margin-top: 4px;">Targeting Software Engineering Internship</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div>
+                    <h3 style="margin-bottom: 24px; color: var(--primary); font-size: 1.75rem;">My Goals</h3>
+                    <h4 style="margin-bottom: 8px;">Career Objective</h4>
+                    <p style="line-height: 1.8; margin-bottom: 24px; color: var(--text-muted);">My goal is to become a Software Engineer specializing in scalable backend systems and Artificial Intelligence. I aim to contribute to products that impact millions of users while continuously learning modern technologies.</p>
+                    
+                    <h4 style="margin-bottom: 8px;">Short-Term</h4>
+                    <ul style="list-style-position: inside; line-height: 1.8; margin-bottom: 24px; color: var(--text-muted);">
+                        <li>Secure a software engineering internship</li>
+                        <li>Strengthen DSA and full-stack skills</li>
+                        <li>Build production-quality projects</li>
+                    </ul>
+
+                    <h4 style="margin-bottom: 8px;">Long-Term</h4>
+                    <ul style="list-style-position: inside; line-height: 1.8; color: var(--text-muted);">
+                        <li>Become a Software Engineer specializing in AI/ML</li>
+                        <li>Contribute to impactful products</li>
+                        <li>Mentor aspiring developers</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <hr style="border: none; border-top: 1px solid var(--border); margin: 48px 0;">
+
+            <div style="text-align: center;">
+                <h3 style="margin-bottom: 16px; font-size: 2rem;">Let's Collaborate</h3>
+                <p style="line-height: 1.8; margin-bottom: 32px; color: var(--text-muted); max-width: 600px; margin-left: auto; margin-right: auto;">Interested in collaborating? I'm always open to internships, collaborations, and exciting software projects. Let's build something impactful together.</p>
+                <div style="display: flex; gap: 16px; justify-content: center;">
+                    <a href="contact.html" class="btn btn-primary btn-large">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    
+    <!-- Premium Footer -->
+    
+
+    
+    <!-- Custom Footer -->
+    
+
+    
+    <!-- Dark Footer -->
+    
+
+    
+    <!-- Redesigned Footer -->
+    
+
+    
+    <!-- Minimalist Footer -->
+    
+
+    
+    <!-- Mega Footer Dashboard -->
+    <link rel="stylesheet" href="mega-footer.css">
+    
+    
+    
+    <!-- Mega Footer Dashboard -->
+    <link rel="stylesheet" href="mega-footer.css">
+    
+
+    
+    <!-- Mega Footer Dashboard -->
+    <link rel="stylesheet" href="mega-footer.css">
+    <footer class="mega-footer">
+        <div class="mega-footer-container">
+            <!-- Section 1: CTA Banner -->
+            <div class="mf-cta-banner">
+                <div class="mf-cta-text">
+                    <h3>Let's Build Something Amazing Together</h3>
+                    <div class="mf-cta-tags">
+                        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10.06 10.06 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Internships</span>
+                        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10.06 10.06 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Collaborations</span>
+                        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10.06 10.06 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Open Source</span>
+                        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10.06 10.06 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Research</span>
+                    </div>
+                </div>
+                <div class="mf-cta-actions">
+                    <a href="resume.html" class="btn">View Resume</a>
+                    <a href="contact.html" class="btn">Contact Me</a>
+                    <a href="mailto:nithyalekhana04@gmail.com" class="btn">Schedule Meeting</a>
+                </div>
+            </div>
+
+            <!-- Sections 2-5: Main Grid -->
+            <div class="mf-grid-main" style="margin-bottom: 32px;">
+                <!-- Col 1: Personal Card -->
+                <div class="mf-personal">
+                    <div class="logo" style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+                        <img src="icon_nobg.png" alt="Logo" width="48" height="48" style="border-radius: 50%; object-fit: cover; background: var(--primary); padding: 3px; box-shadow: 0 4px 12px rgba(112, 71, 235, 0.2);">
+                        <span style="font-size: 1.5rem; font-weight: 700;">Nithya Lekhana</span>
+                    </div>
+                    <p style="font-weight: 600; color: var(--text-dark); margin-bottom: 8px;">Computer Science Engineering Student</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">Computer Science Engineering student passionate about software engineering, full-stack development, and artificial intelligence. Dedicated to building impactful digital solutions through clean code, thoughtful design, and continuous learning.</p>
+                    <p style="font-size: 0.85rem; margin-top: 8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Hyderabad, India</p>
+                    <div class="mf-status">
+                        <div class="mf-status-dot"></div> Available for Internship
+                    </div>
+                    <div style="display:flex; gap:16px;">
+                        <a href="https://github.com/nithya-lekhana" target="_blank" style="color: var(--text-muted);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                        <a href="https://linkedin.com/in/nithya-lekhana" target="_blank" style="color: var(--text-muted);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                        <a href="mailto:nithyalekhana04@gmail.com" style="color: var(--text-muted);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+                    </div>
+                </div>
+                
+                <!-- Col 2: Explore -->
+                <div class="mf-col">
+                    <h4>Explore</h4>
+                    <ul class="mf-link-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="resume.html">Experience & Education</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="skills.html">Skills & Achievements</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Projects -->
+                <div class="mf-col">
+                    <h4>Projects</h4>
+                    <ul class="mf-link-list">
+                        <li><a href="projects.html">Featured Projects</a></li>
+                        <li><a href="https://github.com/nithya-lekhana?tab=repositories" target="_blank">All Repositories</a></li>
+                        <li><a href="projects.html">Open Source</a></li>
+                        <li><a href="projects.html">Case Studies</a></li>
+                        <li><a href="projects.html">Most Starred</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Resources -->
+                <div class="mf-col">
+                    <h4>Resources</h4>
+                    <ul class="mf-link-list">
+                        <li><a href="resume.html">Resume</a></li>
+                        <li><a href="skills.html">Certificates</a></li>
+                        <li><a href="blog.html">Blog & Articles</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="awards.html">Downloads</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="mf-bottom" style="border-top: 1px solid var(--border); padding-top: 32px;">
+                <div>
+                    &copy; 2026 Nithya Lekhana.<br>
+                    <span style="font-size: 0.75rem; margin-top: 8px; display: inline-block;">Portfolio Version v2.4.1 • Built with HTML/CSS/JS</span>
+                </div>
+                <div class="mf-bottom-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Accessibility</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nithya Lekhana | Software Engineer & AI/ML Enthusiast</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <meta name="description"
+        content="Nithya Lekhana is a Computer Science Engineering student specializing in Artificial Intelligence and Machine Learning. Explore software engineering projects, technical skills, GitHub repositories, certifications, and a growing portfolio of modern web applications.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="src/pages/home.css">
+    
+    <style>
+        /* Global Font Overrides */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: Georgia, serif !important;
+        }
+
+        body, p, span, a, div {
+            font-family: "Times New Roman", serif !important;
+        }
+
+        .code, .tech-stack {
+            font-family: "Courier New", monospace !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Decorators -->
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+
+    <header class="navbar-wrapper">
+        <div class="container navbar-inner">
+            <div class="logo">
+                <img src="icon_nobg.png" alt="Logo" width="32" height="32" style="border-radius: 50%; object-fit: cover; background: var(--primary); padding: 2px;">
+                <span>Nithya Lekhana</span>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="services.html">Services</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle">More <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            style="vertical-align: middle;">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg></a>
+                    <div class="dropdown-menu">
+                        <a href="resume.html">Resume</a>
+                        <a href="skills.html">Skills & Certificates</a>
+                        <a href="awards.html">Awards</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="faq.html">FAQ</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary">Contact Me</a>
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        
+        <section class="hero container" style="position: relative; overflow: visible; padding-top: 80px; padding-bottom: 120px;">
+            <div class="hero-content" style="position: relative; z-index: 10;">
+
+                
+                <h1 style="font-size: 3.5rem; letter-spacing: -0.03em; line-height: 1.1; margin-top: 24px; color: var(--text-dark);">
+                    <span style="display: block; font-size: 1.6rem; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; font-family: 'Outfit', sans-serif !important;">Hello, I'm</span>
+                    Nithya Lekhana.
+                </h1>
+
+                <h2 style="font-size: 1.8rem; font-weight: 700; color: var(--primary); margin-top: 20px; margin-bottom: 32px; min-height: 40px; display: flex; align-items: center; gap: 12px;" id="typewriter">
+                    Computer Science Engineering Student
+                </h2>
+
+                <p style="font-size: 1.25rem; max-width: 550px; color: var(--text-muted); line-height: 1.7; font-weight: 400;">
+                    I build modern, scalable software solutions and explore the frontiers of <strong style="color: var(--primary);">Artificial Intelligence</strong> and Machine Learning. Passionate about transforming ideas into impactful digital experiences.
+                </p>
+
+                <div class="hero-actions" style="margin-top: 48px; display: flex; gap: 20px; flex-wrap: wrap;">
+                    <a href="#portfolio-sections" class="btn btn-primary btn-large" style="border-radius: 12px; padding: 18px 36px; font-weight: 700; box-shadow: 0 12px 28px rgba(112, 71, 235, 0.35); transition: all 0.3s;" onclick="document.getElementById('portfolio-sections').scrollIntoView({behavior: 'smooth'})">
+                        Explore Portfolio &rarr;
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary" style="border-radius: 12px; padding: 18px 36px; font-weight: 700; background: white; border: 1px solid rgba(112, 71, 235, 0.15); box-shadow: 0 8px 20px rgba(0,0,0,0.05);">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual" style="position: relative;">
+                <!-- Decorative background elements -->
+                
+                
+                
+                <!-- Exact Match Pastel Brush Stroke Background -->
+                <svg style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; max-width: 450px; z-index: 0; pointer-events: none; fill: #D0C3E3;" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M79.5,152.5 C100,150 250,50 274.5,47.5 C299,45 230,85 240,85 C290,75 360,55 389.5,58.5 C419,62 370,105 385,105 C400,105 425,108.5 410,123.5 C395,138.5 401,135 416,133.5 C431,132 443.5,145.5 426,160.5 C408.5,175.5 450,156 461,168.5 C472,181 440,210 448.5,215 C457,220 484.5,248.5 480,268.5 C475.5,288.5 464,281 446.5,296 C429,311 445,302 473.5,311 C502,320 445.5,335 448.5,348.5 C451.5,362 467.5,358.5 469,383.5 C470.5,408.5 384.5,433.5 391.5,443.5 C398.5,453.5 358,458.5 355.5,463.5 C353,468.5 245.5,488.5 240,488.5 C234.5,488.5 145.5,498.5 136.5,488.5 C127.5,478.5 119.5,468.5 106.5,473.5 C93.5,478.5 120.5,448.5 108.5,443.5 C96.5,438.5 73.5,448.5 72,438.5 C70.5,428.5 95.5,413.5 86.5,408.5 C77.5,403.5 45.5,423.5 35,403.5 C24.5,383.5 54.5,373.5 48.5,363.5 C42.5,353.5 65.5,328.5 49.5,323.5 C33.5,318.5 45.5,293.5 51.5,273.5 C57.5,253.5 16.5,273.5 34,251 C51.5,228.5 39,233.5 61,218.5 C83,203.5 77.5,198.5 89.5,183.5 C101.5,168.5 66.5,183.5 78.5,173.5 C90.5,163.5 59,155 79.5,152.5 Z" />
+                </svg>
+
+                <img src="icon_transparent.png" alt="Nithya Lekhana" class="hero-img" style="position: relative; z-index: 1; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1)); max-width: 90%; margin: 0 auto; display: block;">
+                
+                <!-- Updated Floating Cards -->
+                <div class="floating-card card-1" style="background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.5); padding: 12px 18px; border-radius: 16px; box-shadow: 0 16px 40px rgba(0,0,0,0.08); top: 15%; right: -10px;">
+                    <div class="icon-wrap" style="background: rgba(112, 71, 235, 0.1); width: 36px; height: 36px;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <div class="card-text">
+                        <strong style="color: var(--text-dark); font-size: 1.1rem;">20+</strong>
+                        <span style="font-size: 0.75rem;">Projects Built</span>
+                    </div>
+                </div>
+                
+                <div class="floating-card card-2" style="background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.5); padding: 12px 18px; border-radius: 16px; box-shadow: 0 16px 40px rgba(0,0,0,0.08); top: 50%; left: -20px; right: auto;">
+                    <div class="icon-wrap" style="background: rgba(59, 130, 246, 0.1); width: 36px; height: 36px;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <div class="card-text">
+                        <strong style="color: var(--text-dark); font-size: 1.1rem;">AI/ML</strong>
+                        <span style="font-size: 0.75rem;">Specialization</span>
+                    </div>
+                </div>
+                
+                <div class="floating-card card-3" style="background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.5); padding: 12px 18px; border-radius: 16px; box-shadow: 0 16px 40px rgba(0,0,0,0.08); top: 85%; right: 10px;">
+                    <div class="icon-wrap" style="background: rgba(236, 72, 153, 0.1); width: 36px; height: 36px;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <div class="card-text">
+                        <strong style="color: var(--text-dark); font-size: 1.1rem;">Every Day</strong>
+                        <span style="font-size: 0.75rem;">Continuous Learning</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        
+        <!-- HTML-FIRST DASHBOARD SECTIONS -->
+        <div id="portfolio-sections" class="container" style="display: flex; flex-direction: column; gap: 100px; padding: 60px 0; max-width: 1300px; margin: 0 auto;">
+            
+            <!-- 1. Live Stats Section -->
+            <section id="developer-dashboard">
+                <h2 class="section-title" style="text-align: center;">Live Stats</h2>
+                <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px; text-align: center;">
+                    <div class="stat-card clay-card" style="padding: 24px;">
+                        <h3 style="font-size: 2rem; color: var(--primary); margin-bottom: 8px;">20+</h3>
+                        <p style="color: var(--text-muted); font-weight: 600;">Projects</p>
+                    </div>
+                    <div class="stat-card clay-card" style="padding: 24px;">
+                        <h3 id="gh-repo-count" style="font-size: 2rem; color: var(--primary); margin-bottom: 8px;">--</h3>
+                        <p style="color: var(--text-muted); font-weight: 600;">GitHub Repositories</p>
+                    </div>
+                    <div class="stat-card clay-card" style="padding: 24px;">
+                        <h3 style="font-size: 2rem; color: var(--primary); margin-bottom: 8px;">25+</h3>
+                        <p style="color: var(--text-muted); font-weight: 600;">Technologies</p>
+                    </div>
+                    <div class="stat-card clay-card" style="padding: 24px;">
+                        <h3 style="font-size: 2rem; color: var(--primary); margin-bottom: 8px;">Growing</h3>
+                        <p style="color: var(--text-muted); font-weight: 600;">Certificates</p>
+                    </div>
+                    <div class="stat-card clay-card" style="padding: 24px;">
+                        <h3 style="font-size: 2rem; color: var(--primary); margin-bottom: 8px;">Every Day</h3>
+                        <p style="color: var(--text-muted); font-weight: 600;">Learning Status</p>
+                    </div>
+                    <div class="stat-card clay-card" style="padding: 24px;">
+                        <h3 style="font-size: 2rem; color: var(--primary); margin-bottom: 8px;">Internships</h3>
+                        <p style="color: var(--text-muted); font-weight: 600;">Available For</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. About Preview -->
+            <section id="about-preview">
+                <div class="about-card clay-card" style="padding: 56px 40px; border-radius: 32px; position: relative; overflow: hidden;">
+                    <!-- Decorative background element -->
+                    <div style="position: absolute; top: -100px; right: -50px; width: 400px; height: 400px; background: radial-gradient(circle, var(--primary) 0%, transparent 70%); opacity: 0.12; border-radius: 50%;"></div>
+                    <div style="position: absolute; bottom: -100px; left: -50px; width: 300px; height: 300px; background: radial-gradient(circle, var(--secondary) 0%, transparent 70%); opacity: 0.12; border-radius: 50%;"></div>
+                    
+                    <div style="position: relative; z-index: 1;">
+                        <h2 class="section-title" style="text-align: center; margin-bottom: 40px; display: flex; align-items: center; justify-content: center; gap: 16px; font-size: 2.75rem; letter-spacing: -0.03em;">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            About Me
+                        </h2>
+                        
+                        <div style="background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.8); border-radius: 24px; padding: 48px; box-shadow: 0 10px 40px rgba(0,0,0,0.04); max-width: 1100px; margin: 0 auto; text-align: center;">
+                            
+                            <h3 style="margin-bottom: 24px; color: var(--text-dark); font-size: 1.8rem; font-weight: 800; letter-spacing: -0.02em;">Passionate about building software that solves <span style="color: var(--primary);">real-world problems.</span></h3>
+                            
+                            <p style="font-size: 1.25rem; line-height: 1.9; color: var(--text-dark); margin-bottom: 40px; font-weight: 400;">I'm a Computer Science Engineering student specializing in <strong style="color: var(--primary);">Artificial Intelligence</strong> and <strong style="color: var(--secondary);">Machine Learning</strong> at Woxsen University. My interests span software engineering, full-stack development, backend systems, and intelligent applications. I enjoy designing scalable systems, building meaningful projects, and continuously learning modern technologies to become a better engineer every day.</p>
+                            
+                            <div class="about-actions" style="display: flex; justify-content: center; gap: 20px;">
+                                <a href="about.html" class="btn btn-primary" style="border-radius: 12px; padding: 16px 32px; font-size: 1.1rem; font-weight: 700; box-shadow: 0 8px 20px rgba(112, 71, 235, 0.3);">Learn More &rarr;</a>
+                                <a href="resume.html" class="btn btn-secondary" style="border-radius: 12px; padding: 16px 32px; font-size: 1.1rem; font-weight: 700; background: white;">Download Resume</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Current Focus -->
+            <section id="current-focus">
+                <h2 class="section-title" style="text-align: center;">Currently Working On</h2>
+                <div id="latestRepoContainer" style="max-width: 850px; margin: 0 auto;">
+                    <div class="clay-card" style="padding: 40px; border-radius: 24px; display: flex; flex-direction: column; gap: 16px; background: linear-gradient(135deg, white, rgba(241, 245, 249, 0.5)); border: 1px solid rgba(112, 71, 235, 0.1);">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                            <div style="height: 32px; width: 60%; background: var(--secondary); border-radius: 8px; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;"></div>
+                            <div style="height: 28px; width: 100px; background: rgba(112, 71, 235, 0.1); border-radius: 20px; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;"></div>
+                        </div>
+                        <div style="height: 20px; width: 100%; background: var(--secondary); border-radius: 4px; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; animation-delay: 150ms;"></div>
+                        <div style="height: 20px; width: 80%; background: var(--secondary); border-radius: 4px; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; animation-delay: 300ms;"></div>
+                        <div style="display: flex; gap: 24px; margin-top: 16px;">
+                            <div style="height: 20px; width: 80px; background: var(--secondary); border-radius: 4px; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; animation-delay: 450ms;"></div>
+                            <div style="height: 20px; width: 120px; background: var(--secondary); border-radius: 4px; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; animation-delay: 600ms;"></div>
+                        </div>
+                    </div>
+                    <style>
+                        @keyframes pulse {
+                            0%, 100% { opacity: 0.8; }
+                            50% { opacity: 0.3; }
+                        }
+                    </style>
+                </div>
+            </section>
+
+            
+            <!-- Quick Links -->
+            <section id="quick-links">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 40px; display: flex; align-items: center; justify-content: center; gap: 16px; font-size: 2.5rem; letter-spacing: -0.02em;">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                    Quick Links
+                </h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+                    
+                    <a href="projects.html" class="clay-card" style="display: block; text-decoration: none; padding: 32px; text-align: center; transition: all 0.3s; color: var(--text-dark);">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 16px;"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                        <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 8px;">Featured Projects</h3>
+                        <p style="font-size: 1.1rem; color: var(--text-muted);">View my software engineering & AI projects.</p>
+                    </a>
+                    
+                    <a href="skills.html" class="clay-card" style="display: block; text-decoration: none; padding: 32px; text-align: center; transition: all 0.3s; color: var(--text-dark);">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 16px;"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 8px;">Technical Skills</h3>
+                        <p style="font-size: 1.1rem; color: var(--text-muted);">Explore my programming languages & tools.</p>
+                    </a>
+                    
+                    <a href="services.html" class="clay-card" style="display: block; text-decoration: none; padding: 32px; text-align: center; transition: all 0.3s; color: var(--text-dark);">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 16px;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 8px;">What I Build</h3>
+                        <p style="font-size: 1.1rem; color: var(--text-muted);">Discover my services and specializations.</p>
+                    </a>
+
+                
+                    <a href="blog.html" class="clay-card" style="display: block; text-decoration: none; padding: 32px; text-align: center; transition: all 0.3s; color: var(--text-dark);">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 16px;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                        <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 8px;">Latest Articles</h3>
+                        <p style="font-size: 1.1rem; color: var(--text-muted);">Insights from software engineering & AI.</p>
+                    </a>
+                    
+                    <a href="awards.html" class="clay-card" style="display: block; text-decoration: none; padding: 32px; text-align: center; transition: all 0.3s; color: var(--text-dark);">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 16px;"><path d="M22 11.08V12a10.06 10.06 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 8px;">Certifications</h3>
+                        <p style="font-size: 1.1rem; color: var(--text-muted);">Courses, workshops, and continuous learning.</p>
+                    </a>
+                    
+                    <a href="contact.html" class="clay-card" style="display: block; text-decoration: none; padding: 32px; text-align: center; transition: all 0.3s; color: var(--text-dark);">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 16px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 8px;">Contact Me</h3>
+                        <p style="font-size: 1.1rem; color: var(--text-muted);">Let's build something meaningful together.</p>
+                    </a>
+</div>
+            </section>
+
+
+            
+
+            
+
+            <!-- 7. Development Philosophy -->
+            <section id="development-philosophy">
+                <h2 class="section-title" style="text-align: center;">My Development Philosophy</h2>
+                <p style="color: var(--text-muted); margin-bottom: 32px; max-width: 800px; font-size: 1.1rem; line-height: 1.6; text-align: center; margin-left: auto; margin-right: auto;">I believe great software starts with understanding the problem before writing code. My approach emphasizes clean architecture, maintainable solutions, continuous improvement, and creating technology that delivers meaningful value.</p>
+                
+                <div class="philosophy-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; padding: 16px;">
+                    
+                    <div class="clay-card" style="padding: 40px 32px; text-align: center; transition: all 0.3s; position: relative; overflow: hidden;">
+                        <div style="width: 64px; height: 64px; margin: 0 auto 24px; background: rgba(112, 71, 235, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary);">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        </div>
+                        <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 16px;">Problem Solving</h3>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6;">Focusing on understanding the core requirements to engineer elegant and effective solutions to complex challenges.</p>
+                    </div>
+
+                    <div class="clay-card" style="padding: 40px 32px; text-align: center; transition: all 0.3s; position: relative; overflow: hidden;">
+                        <div style="width: 64px; height: 64px; margin: 0 auto 24px; background: rgba(112, 71, 235, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary);">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                        </div>
+                        <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 16px;">Clean Architecture</h3>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6;">Structuring applications with clear separation of concerns, ensuring they are maintainable, testable, and highly readable.</p>
+                    </div>
+
+                    <div class="clay-card" style="padding: 40px 32px; text-align: center; transition: all 0.3s; position: relative; overflow: hidden;">
+                        <div style="width: 64px; height: 64px; margin: 0 auto 24px; background: rgba(112, 71, 235, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary);">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                        </div>
+                        <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 16px;">Continuous Learning</h3>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6;">Embracing the rapidly evolving tech landscape by constantly exploring new frameworks, patterns, and AI advancements.</p>
+                    </div>
+
+                    <div class="clay-card" style="padding: 40px 32px; text-align: center; transition: all 0.3s; position: relative; overflow: hidden;">
+                        <div style="width: 64px; height: 64px; margin: 0 auto 24px; background: rgba(112, 71, 235, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary);">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                        </div>
+                        <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 16px;">Scalable Development</h3>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6;">Building systems designed to grow seamlessly with users, prioritizing performance, efficiency, and robust infrastructure.</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 8. Learning Journey -->
+            <section id="learning-journey">
+                <h2 class="section-title" style="text-align: center;">Learning Journey</h2>
+                <p style="color: var(--text-muted); margin-bottom: 40px; max-width: 800px; font-size: 1.1rem; line-height: 1.6; text-align: center; margin-left: auto; margin-right: auto;">Technology evolves every day, and so do I. I continuously explore new programming languages, frameworks, development practices, and AI technologies while strengthening my software engineering fundamentals.</p>
+                
+                <div class="journey-timeline" style="max-width: 650px; margin: 40px auto 0; position: relative; padding-left: 32px;">
+                    <!-- Vertical Connecting Line -->
+                    <div style="position: absolute; top: 24px; bottom: 24px; left: 15px; width: 4px; background: linear-gradient(to bottom, var(--primary), var(--secondary)); border-radius: 4px; opacity: 0.4;"></div>
+                    
+                    <!-- 1 -->
+                    <div style="position: relative; margin-bottom: 32px;">
+                        <div style="position: absolute; left: -25px; top: 32px; width: 16px; height: 16px; background: white; border: 4px solid var(--primary); border-radius: 50%; z-index: 2; box-shadow: 0 0 10px rgba(112, 71, 235, 0.4);"></div>
+                        <div class="clay-card" style="padding: 24px 32px; transition: all 0.3s; display: flex; align-items: center; gap: 24px;">
+                            <div style="width: 56px; height: 56px; background: rgba(112,71,235,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0; box-shadow: inset 0 2px 4px rgba(255,255,255,0.5);">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            </div>
+                            <div>
+                                <h3 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 4px;">Programming Fundamentals</h3>
+                                <p style="color: var(--text-muted); font-size: 1rem; margin: 0; line-height: 1.5;">C++, Java, Object-Oriented Programming, and core CS concepts.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2 -->
+                    <div style="position: relative; margin-bottom: 32px;">
+                        <div style="position: absolute; left: -25px; top: 32px; width: 16px; height: 16px; background: white; border: 4px solid var(--primary); border-radius: 50%; z-index: 2; box-shadow: 0 0 10px rgba(112, 71, 235, 0.4);"></div>
+                        <div class="clay-card" style="padding: 24px 32px; transition: all 0.3s; display: flex; align-items: center; gap: 24px;">
+                            <div style="width: 56px; height: 56px; background: rgba(112,71,235,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0; box-shadow: inset 0 2px 4px rgba(255,255,255,0.5);">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                            </div>
+                            <div>
+                                <h3 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 4px;">Web Development</h3>
+                                <p style="color: var(--text-muted); font-size: 1rem; margin: 0; line-height: 1.5;">HTML, CSS, JavaScript, React, and building responsive UI.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 3 -->
+                    <div style="position: relative; margin-bottom: 32px;">
+                        <div style="position: absolute; left: -25px; top: 32px; width: 16px; height: 16px; background: white; border: 4px solid var(--primary); border-radius: 50%; z-index: 2; box-shadow: 0 0 10px rgba(112, 71, 235, 0.4);"></div>
+                        <div class="clay-card" style="padding: 24px 32px; transition: all 0.3s; display: flex; align-items: center; gap: 24px;">
+                            <div style="width: 56px; height: 56px; background: rgba(112,71,235,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0; box-shadow: inset 0 2px 4px rgba(255,255,255,0.5);">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                            </div>
+                            <div>
+                                <h3 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 4px;">Data Structures & Algorithms</h3>
+                                <p style="color: var(--text-muted); font-size: 1rem; margin: 0; line-height: 1.5;">Problem-solving, algorithmic thinking, and efficient computing.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4 -->
+                    <div style="position: relative; margin-bottom: 32px;">
+                        <div style="position: absolute; left: -25px; top: 32px; width: 16px; height: 16px; background: white; border: 4px solid var(--primary); border-radius: 50%; z-index: 2; box-shadow: 0 0 10px rgba(112, 71, 235, 0.4);"></div>
+                        <div class="clay-card" style="padding: 24px 32px; transition: all 0.3s; display: flex; align-items: center; gap: 24px;">
+                            <div style="width: 56px; height: 56px; background: rgba(112,71,235,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0; box-shadow: inset 0 2px 4px rgba(255,255,255,0.5);">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                            </div>
+                            <div>
+                                <h3 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 4px;">Backend Engineering</h3>
+                                <p style="color: var(--text-muted); font-size: 1rem; margin: 0; line-height: 1.5;">APIs, Databases, System Design, Node.js, and Express.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5 -->
+                    <div style="position: relative; margin-bottom: 32px;">
+                        <div style="position: absolute; left: -25px; top: 32px; width: 16px; height: 16px; background: white; border: 4px solid var(--primary); border-radius: 50%; z-index: 2; box-shadow: 0 0 10px rgba(112, 71, 235, 0.4);"></div>
+                        <div class="clay-card" style="padding: 24px 32px; transition: all 0.3s; display: flex; align-items: center; gap: 24px;">
+                            <div style="width: 56px; height: 56px; background: rgba(112,71,235,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0; box-shadow: inset 0 2px 4px rgba(255,255,255,0.5);">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10H12V2z"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+                            </div>
+                            <div>
+                                <h3 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 4px;">Artificial Intelligence</h3>
+                                <p style="color: var(--text-muted); font-size: 1rem; margin: 0; line-height: 1.5;">Machine Learning, Neural Networks, Python, and AI tools.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6 -->
+                    <div style="position: relative;">
+                        <div style="position: absolute; left: -25px; top: 32px; width: 16px; height: 16px; background: white; border: 4px solid var(--primary); border-radius: 50%; z-index: 2; box-shadow: 0 0 10px rgba(112, 71, 235, 0.4);"></div>
+                        <div class="clay-card" style="padding: 24px 32px; transition: all 0.3s; display: flex; align-items: center; gap: 24px;">
+                            <div style="width: 56px; height: 56px; background: rgba(112,71,235,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0; box-shadow: inset 0 2px 4px rgba(255,255,255,0.5);">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+                            </div>
+                            <div>
+                                <h3 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 4px;">Cloud & DevOps</h3>
+                                <p style="color: var(--text-muted); font-size: 1rem; margin: 0; line-height: 1.5;">Deployment, Docker, CI/CD pipelines, and cloud architecture.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 9. GitHub Preview -->
+            <section id="github-activity" style="margin-top: 64px;">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 32px; display: flex; align-items: center; justify-content: center; gap: 16px; font-size: 2.5rem; letter-spacing: -0.02em;">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    GitHub Activity
+                </h2>
+                
+                <div class="clay-card" style="padding: 56px 40px; border-radius: 32px; position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(241,245,249,0.9)); display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <!-- Decorative blur -->
+                    <div style="position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 400px; height: 400px; background: radial-gradient(circle, var(--primary) 0%, transparent 70%); opacity: 0.1; border-radius: 50%; pointer-events: none;"></div>
+                    
+                    <p style="color: var(--text-dark); max-width: 750px; font-size: 1.2rem; line-height: 1.8; margin-bottom: 48px; position: relative; z-index: 1;">My GitHub reflects my continuous learning journey and commitment to building software. Every commit represents practical experience and a step forward in software engineering.</p>
+                    
+                    <div style="background: white; padding: 32px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); width: 100%; max-width: 950px; margin-bottom: 40px; position: relative; z-index: 1; border: 1px solid rgba(112, 71, 235, 0.15); display: flex; justify-content: center;">
+                        <img src="https://ghchart.rshah.org/7047eb/nithya-lekhana" alt="Nithya Lekhana's Github chart" style="width: 100%; max-width: 850px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.03));" />
+                    </div>
+                    
+                    <a href="https://github.com/nithya-lekhana" target="_blank" class="btn btn-primary" style="position: relative; z-index: 1; border-radius: 12px; padding: 16px 36px; font-size: 1.15rem; font-weight: 700; box-shadow: 0 10px 24px rgba(112, 71, 235, 0.3);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        Explore My Repositories
+                    </a>
+                </div>
+            </section>
+            
+            
+
+            
+
+            
+
+        </div>
+    </main>
+
+
+
+
+
+    <!-- Mega Footer Dashboard -->
+    <link rel="stylesheet" href="mega-footer.css">
+
+
+
+    <!-- Mega Footer Dashboard -->
+    <link rel="stylesheet" href="mega-footer.css">
+
+
+    <script type="module" src="src/pages/home.js?v=2"></script>
+
+    <!-- Mega Footer Dashboard -->
+    <link rel="stylesheet" href="mega-footer.css">
+    <footer class="mega-footer">
+        <div class="mega-footer-container">
+            <!-- Section 1: CTA Banner -->
+            <div class="mf-cta-banner">
+                <div class="mf-cta-text">
+                    <h3>Let's Build Something Amazing Together</h3>
+                    <div class="mf-cta-tags">
+                        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10.06 10.06 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg> Internships</span>
+                        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10.06 10.06 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg> Collaborations</span>
+                        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10.06 10.06 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg> Open Source</span>
+                        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10.06 10.06 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg> Research</span>
+                    </div>
+                </div>
+                <div class="mf-cta-actions">
+                    <a href="resume.html" class="btn">View Resume</a>
+                    <a href="contact.html" class="btn">Contact Me</a>
+                    <a href="mailto:nithyalekhana04@gmail.com" class="btn">Schedule Meeting</a>
+                </div>
+            </div>
+
+            <!-- Sections 2-5: Main Grid -->
+            <div class="mf-grid-main" style="margin-bottom: 32px;">
+                <!-- Col 1: Personal Card -->
+                <div class="mf-personal">
+                    <div class="logo" style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+                        <img src="icon_nobg.png" alt="Logo" width="48" height="48" style="border-radius: 50%; object-fit: cover; background: var(--primary); padding: 3px; box-shadow: 0 4px 12px rgba(112, 71, 235, 0.2);">
+                        <span style="font-size: 1.5rem; font-weight: 700;">Nithya Lekhana</span>
+                    </div>
+                    <p style="font-weight: 600; color: var(--text-dark); margin-bottom: 8px;">Computer Science
+                        Engineering Student</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">
+                        Computer Science Engineering student passionate about software engineering, full-stack
+                        development, and artificial intelligence. Dedicated to building impactful digital solutions
+                        through clean code, thoughtful design, and continuous learning.</p>
+                    <p style="font-size: 0.85rem; margin-top: 8px;"><svg width="14" height="14" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" style="vertical-align: middle;">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg> Hyderabad, India</p>
+                    <div class="mf-status">
+                        <div class="mf-status-dot"></div> Available for Internship
+                    </div>
+                    <div style="display:flex; gap:16px;">
+                        <a href="https://github.com/nithya-lekhana" target="_blank"
+                            style="color: var(--text-muted);"><svg width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg></a>
+                        <a href="https://linkedin.com/in/nithya-lekhana" target="_blank"
+                            style="color: var(--text-muted);"><svg width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg></a>
+                        <a href="mailto:nithyalekhana04@gmail.com" style="color: var(--text-muted);"><svg width="20"
+                                height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Explore -->
+                <div class="mf-col">
+                    <h4>Explore</h4>
+                    <ul class="mf-link-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="resume.html">Experience & Education</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="skills.html">Skills & Achievements</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Projects -->
+                <div class="mf-col">
+                    <h4>Projects</h4>
+                    <ul class="mf-link-list">
+                        <li><a href="projects.html">Featured Projects</a></li>
+                        <li><a href="https://github.com/nithya-lekhana?tab=repositories" target="_blank">All
+                                Repositories</a></li>
+                        <li><a href="projects.html">Open Source</a></li>
+                        <li><a href="projects.html">Case Studies</a></li>
+                        <li><a href="projects.html">Most Starred</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Resources -->
+                <div class="mf-col">
+                    <h4>Resources</h4>
+                    <ul class="mf-link-list">
+                        <li><a href="resume.html">Resume</a></li>
+                        <li><a href="skills.html">Certificates</a></li>
+                        <li><a href="blog.html">Blog & Articles</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="awards.html">Downloads</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="mf-bottom" style="border-top: 1px solid var(--border); padding-top: 32px;">
+                <div>
+                    &copy; 2026 Nithya Lekhana.<br>
+                    <span style="font-size: 0.75rem; margin-top: 8px; display: inline-block;">Portfolio Version v2.4.1 •
+                        Built with HTML/CSS/JS</span>
+                </div>
+                <div class="mf-bottom-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Accessibility</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

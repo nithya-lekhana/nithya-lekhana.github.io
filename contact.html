@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Nithya Lekhana</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mega-footer.css">
+    <style>
+        /* Dark Theme Variables specifically for Contact Page */
+        body.light-hub {
+            --bg-color: #ffffff;
+            --surface: #f8fafc;
+            --card-bg: #ffffff;
+            --primary: #7047eb;
+            --primary-hover: #5a35cc;
+            --success: #22C55E;
+            --text-main: #1e1b4b;
+            --text-muted: #64748b;
+            --border-color: rgba(0, 0, 0, 0.1);
+            
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Force navbar to match dark theme */
+        body.light-hub .navbar-wrapper {
+            background: rgba(255, 255, 255, 0.8) !important;
+            border-bottom: 1px solid var(--border-color);
+        }
+        body.light-hub .navbar-wrapper * {
+            color: var(--text-main) !important;
+        }
+        /* Logo uses default colors */
+        
+        /* Interactive Background */
+        .hub-bg {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -1;
+            background: radial-gradient(circle at 15% 50%, rgba(123, 97, 255, 0.08), transparent 25%),
+                        radial-gradient(circle at 85% 30%, rgba(123, 97, 255, 0.08), transparent 25%);
+            pointer-events: none;
+        }
+
+        .hub-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 24px 80px 24px;
+        }
+
+        /* 1. Hero Section */
+        .hub-hero {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        .hub-hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+            background: linear-gradient(to right, #1e1b4b, #7047eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hub-hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            line-height: 1.6;
+        }
+        .hub-hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .hub-btn {
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .hub-btn-primary {
+            background: var(--primary);
+            color: white !important;
+            border: none;
+            box-shadow: 0 8px 24px rgba(123, 97, 255, 0.3);
+        }
+        .hub-btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+        .hub-btn-secondary {
+            background: var(--surface);
+            color: var(--text-main) !important;
+            border: 1px solid var(--border-color);
+        }
+        .hub-btn-secondary:hover {
+            background: var(--card-bg);
+            border-color: var(--primary);
+        }
+
+        /* 2. Contact Cards Grid */
+        .hub-grid-3x2 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 80px;
+        }
+        .hub-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .hub-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .hub-card-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(123, 97, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        .hub-card-title {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+        .hub-card-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+        .copy-btn {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .copy-btn:hover { color: var(--primary); }
+
+        /* 3. Form & Status Section */
+        .hub-split {
+            max-width: 800px;
+            margin: 0 auto 80px auto;
+        }
+        
+        .hub-form-container {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 40px;
+        }
+        .hub-form-container h3 {
+            font-size: 1.8rem;
+            margin-bottom: 32px;
+        }
+        .hub-form-group {
+            margin-bottom: 24px;
+        }
+        .hub-form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .hub-input {
+            width: 100%;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            color: var(--text-main);
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        .hub-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(123, 97, 255, 0.1);
+        }
+        textarea.hub-input {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Developer Status */
+        .dev-status {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .status-box {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 24px;
+        }
+        .status-header {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .status-item {
+            margin-bottom: 16px;
+        }
+        .status-item:last-child { margin-bottom: 0; }
+        .status-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 6px;
+        }
+        .status-val {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .availability-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(34, 197, 94, 0.1);
+            color: var(--success);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+        .availability-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--success);
+        }
+
+        /* 4. Professional Profiles */
+        .profiles-section {
+            margin-bottom: 80px;
+        }
+        .profiles-section h3 {
+            font-size: 2rem;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .profiles-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+        .profile-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 24px;
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .profile-link:hover {
+            background: var(--card-bg);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        .profile-link svg {
+            width: 32px; height: 32px;
+            color: var(--text-main);
+            margin-bottom: 16px;
+        }
+        .profile-name {
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+        .profile-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* 5. What Can I Help With */
+        .help-section {
+            margin-bottom: 80px;
+        }
+        .help-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        .help-tag {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            padding: 12px 24px;
+            border-radius: 100px;
+            font-weight: 500;
+            color: var(--text-main);
+            transition: all 0.2s;
+        }
+        .help-tag:hover {
+            border-color: var(--primary);
+            background: rgba(123, 97, 255, 0.1);
+        }
+
+        /* 8. FAQ Section */
+        .faq-section {
+            margin-bottom: 80px;
+        }
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .faq-card {
+            background: var(--surface);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-q {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .faq-a {
+            background: var(--card-bg);
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        /* Footer override */
+        body.light-hub .mega-footer {
+            background: var(--card-bg) !important;
+        }
+        body.light-hub .mega-footer * {
+            color: var(--text-main) !important;
+        }
+        body.light-hub .mf-cta-banner {
+            background: var(--surface);
+            border: 1px solid var(--primary);
+        }
+        body.light-hub .mf-cta-banner h3 { color: var(--text-main) !important; }
+
+        @media (max-width: 992px) {
+            .hub-grid-3x2 { grid-template-columns: repeat(2, 1fr); }
+            .hub-split { grid-template-columns: 1fr; }
+            .profiles-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .hub-hero h1 { font-size: 2.5rem; }
+            .hub-grid-3x2 { grid-template-columns: 1fr; }
+            .profiles-grid { grid-template-columns: 1fr; }
+            .faq-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body class="light-hub">
+
+    <!-- Interactive Background -->
+    <div class="hub-bg"></div>
+
+    <!-- Header (Same structure, styled by CSS overrides) -->
+    <header class="navbar-wrapper">
+        <div class="container navbar-inner">
+            <div class="logo">
+                <img src="icon_nobg.png" alt="Logo" width="32" height="32" style="border-radius: 50%; object-fit: cover; background: var(--primary); padding: 2px;">
+                <span>Nithya Lekhana</span>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="services.html">Services</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle">More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                    <div class="dropdown-menu">
+                        <a href="resume.html">Resume</a>
+                        <a href="skills.html">Skills & Certificates</a>
+                        <a href="awards.html">Awards</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="faq.html">FAQ</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="nav-actions">
+                <a href="contact.html" class="hub-btn hub-btn-primary" style="padding: 10px 20px;">Contact Me</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="hub-container">
+        
+        <!-- 1. Hero Section -->
+        <section class="hub-hero">
+            <h1>Let's Build Something Great Together</h1>
+            <p>Whether you're looking for a software engineering intern, project collaborator, or simply want to discuss technology, I'd love to hear from you.</p>
+            <div class="hub-hero-actions">
+                <a href="resume.html" class="hub-btn hub-btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    Download Resume
+                </a>
+                <a href="https://github.com/nithya-lekhana" target="_blank" class="hub-btn hub-btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    View GitHub
+                </a>
+                <a href="https://linkedin.com/in/nithya-lekhana" target="_blank" class="hub-btn hub-btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    LinkedIn
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. Contact Cards -->
+        <section class="hub-grid-3x2">
+            <div class="hub-card">
+                <button class="copy-btn" onclick="navigator.clipboard.writeText('nithyalekhana04@gmail.com'); alert('Email copied!');" title="Copy to clipboard">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+                <div class="hub-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
+                <div class="hub-card-title">Email</div>
+                <div class="hub-card-value">nithyalekhana04@gmail.com</div>
+            </div>
+            <div class="hub-card">
+                <a href="https://linkedin.com/in/nithya-lekhana" target="_blank" class="copy-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                <div class="hub-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></div>
+                <div class="hub-card-title">LinkedIn</div>
+                <div class="hub-card-value">linkedin.com/in/nithya-lekhana</div>
+            </div>
+            <div class="hub-card">
+                <a href="https://github.com/nithya-lekhana" target="_blank" class="copy-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                <div class="hub-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></div>
+                <div class="hub-card-title">GitHub</div>
+                <div class="hub-card-value">github.com/nithya-lekhana</div>
+            </div>
+            <div class="hub-card">
+                <div class="hub-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+                <div class="hub-card-title">Location</div>
+                <div class="hub-card-value">Hyderabad, India</div>
+            </div>
+            <div class="hub-card">
+                <div class="hub-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg></div>
+                <div class="hub-card-title">University</div>
+                <div class="hub-card-value">Woxsen University</div>
+            </div>
+            <div class="hub-card">
+                <div class="hub-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                <div class="hub-card-title">Time Zone</div>
+                <div class="hub-card-value">IST (UTC +5:30)</div>
+            </div>
+        </section>
+
+        <!-- 3. Form & Status Split -->
+        <section class="hub-split">
+            <!-- Form -->
+            <div class="hub-form-container" style="box-shadow: 0 12px 40px rgba(0,0,0,0.05); transition: all 0.3s;" id="form-container">
+                <div id="form-content">
+                    <h3 style="font-size: 2rem; color: var(--primary); margin-bottom: 8px;">Send a Message</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 32px;">Fill out the form below and I'll get back to you within 24 hours.</p>
+                    <style>
+                        .premium-form-group { position: relative; margin-bottom: 24px; }
+                        .premium-input {
+                            width: 100%;
+                            background: rgba(255,255,255,0.6);
+                            border: 1px solid var(--border-color);
+                            border-radius: 12px;
+                            padding: 24px 16px 10px 48px;
+                            color: var(--text-main);
+                            font-size: 1rem;
+                            font-family: inherit;
+                            transition: all 0.3s ease;
+                        }
+                        .premium-input:focus {
+                            outline: none;
+                            border-color: var(--primary);
+                            background: #ffffff;
+                            box-shadow: 0 0 0 4px rgba(112, 71, 235, 0.1);
+                        }
+                        .premium-label {
+                            position: absolute;
+                            top: 18px;
+                            left: 48px;
+                            color: var(--text-muted);
+                            font-size: 1rem;
+                            pointer-events: none;
+                            transition: all 0.2s ease;
+                        }
+                        .premium-input:focus ~ .premium-label,
+                        .premium-input:not(:placeholder-shown) ~ .premium-label {
+                            top: 6px;
+                            font-size: 0.75rem;
+                            color: var(--primary);
+                            font-weight: 600;
+                        }
+                        .premium-icon {
+                            position: absolute;
+                            left: 16px;
+                            top: 18px;
+                            color: var(--text-muted);
+                            transition: color 0.3s ease;
+                        }
+                        .premium-input:focus ~ .premium-icon { color: var(--primary); }
+                    </style>
+                    <form action="#" method="POST" id="contact-form">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="premium-form-group">
+                                <input type="text" id="name" class="premium-input" placeholder=" " required>
+                                <svg class="premium-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                <label for="name" class="premium-label">Full Name</label>
+                            </div>
+                            <div class="premium-form-group">
+                                <input type="email" id="email" class="premium-input" placeholder=" " required>
+                                <svg class="premium-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                <label for="email" class="premium-label">Email Address</label>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="premium-form-group">
+                                <input type="tel" id="phone" class="premium-input" placeholder=" ">
+                                <svg class="premium-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                <label for="phone" class="premium-label">Phone Number (Optional)</label>
+                            </div>
+                            <div class="premium-form-group">
+                                <input type="text" id="company" class="premium-input" placeholder=" ">
+                                <svg class="premium-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                                <label for="company" class="premium-label">Company (Optional)</label>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="premium-form-group">
+                                <input type="url" id="website" class="premium-input" placeholder=" ">
+                                <svg class="premium-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                                <label for="website" class="premium-label">Website / LinkedIn (Optional)</label>
+                            </div>
+                            <div class="premium-form-group">
+                                <input type="text" id="budget" class="premium-input" placeholder=" ">
+                                <svg class="premium-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                                <label for="budget" class="premium-label">Budget / Salary (Optional)</label>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="premium-form-group">
+                                <select id="contact_method" class="premium-input" style="cursor: pointer;">
+                                    <option value="" disabled selected hidden></option>
+                                    <option value="Email">Email</option>
+                                    <option value="Phone">Phone</option>
+                                    <option value="WhatsApp">WhatsApp</option>
+                                </select>
+                                <svg class="premium-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                <label for="contact_method" class="premium-label">Pref. Contact Method (Opt)</label>
+                            </div>
+                            <div class="premium-form-group">
+                                <select id="timeline" class="premium-input" style="cursor: pointer;">
+                                    <option value="" disabled selected hidden></option>
+                                    <option value="ASAP">ASAP</option>
+                                    <option value="Within 1 Month">Within 1 Month</option>
+                                    <option value="Flexible">Flexible / No Rush</option>
+                                </select>
+                                <svg class="premium-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                <label for="timeline" class="premium-label">Timeline (Optional)</label>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="premium-form-group">
+                                <select id="category" class="premium-input" required style="cursor: pointer;">
+                                    <option value="" disabled selected hidden></option>
+                                    <option value="internship">Internship</option>
+                                    <option value="job">Job Opportunity</option>
+                                    <option value="collab">Project Collaboration</option>
+                                    <option value="opensource">Open Source</option>
+                                    <option value="freelance">Freelance</option>
+                                    <option value="general">General Inquiry</option>
+                                </select>
+                                <svg class="premium-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                                <label for="category" class="premium-label">Category</label>
+                            </div>
+                            <div class="premium-form-group">
+                                <input type="text" id="subject" class="premium-input" placeholder=" " required>
+                                <svg class="premium-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                                <label for="subject" class="premium-label">Subject</label>
+                            </div>
+                        </div>
+                        <div class="premium-form-group">
+                            <textarea id="message" class="premium-input" placeholder=" " required style="min-height: 150px; resize: vertical; padding-top: 30px;"></textarea>
+                            <svg class="premium-icon" style="top: 24px;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            <label for="message" class="premium-label" style="top: 24px;">Your Message</label>
+                        </div>
+                        <button type="submit" class="hub-btn hub-btn-primary" style="width: 100%; justify-content: center; padding: 16px; font-size: 1.1rem; border-radius: 12px; margin-top: 10px; box-shadow: 0 10px 25px rgba(112,71,235,0.4);" id="submit-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                            <span>Send via WhatsApp</span>
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Success State -->
+                <div id="success-state" style="display: none; text-align: center; padding: 40px 20px;">
+                    <div style="width: 80px; height: 80px; background: rgba(34, 197, 94, 0.1); color: var(--success); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px auto;">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <h3 style="font-size: 2.2rem; color: var(--text-main); margin-bottom: 12px;">Message Sent!</h3>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 32px;">Thank you for reaching out. I'll get back to you as soon as possible.</p>
+                    <button type="button" class="hub-btn hub-btn-secondary" onclick="document.getElementById('contact-form').reset(); document.getElementById('success-state').style.display='none'; document.getElementById('form-content').style.display='block';">Send Another Message</button>
+                </div>
+            </div>
+            
+            <!-- Simulated Submission Logic -->
+            <script>
+                document.getElementById('contact-form').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const btn = document.getElementById('submit-btn');
+                    btn.innerHTML = '<svg class="spinner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="animation: spin 1s linear infinite;"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg> <span>Redirecting to WhatsApp...</span>';
+                    
+                    if(!document.getElementById('spin-style')) {
+                        const style = document.createElement('style');
+                        style.id = 'spin-style';
+                        style.innerHTML = '@keyframes spin { 100% { transform: rotate(360deg); } }';
+                        document.head.appendChild(style);
+                    }
+                    
+                    // Capture form data
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const phone = document.getElementById('phone').value;
+                    const company = document.getElementById('company').value;
+                    const website = document.getElementById('website').value;
+                    const budget = document.getElementById('budget').value;
+                    const contactMethod = document.getElementById('contact_method').selectedIndex > 0 ? document.getElementById('contact_method').options[document.getElementById('contact_method').selectedIndex].text : '';
+                    const timeline = document.getElementById('timeline').selectedIndex > 0 ? document.getElementById('timeline').options[document.getElementById('timeline').selectedIndex].text : '';
+                    const category = document.getElementById('category').options[document.getElementById('category').selectedIndex].text;
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value;
+                    
+                    // Format WhatsApp Message
+                    let waText = `*New Message from Portfolio!*\n\n*Name:* ${name}\n*Email:* ${email}\n`;
+                    if(phone) waText += `*Phone:* ${phone}\n`;
+                    if(company) waText += `*Company:* ${company}\n`;
+                    if(website) waText += `*Link:* ${website}\n`;
+                    if(budget) waText += `*Budget/Salary:* ${budget}\n`;
+                    if(contactMethod) waText += `*Pref. Method:* ${contactMethod}\n`;
+                    if(timeline) waText += `*Timeline:* ${timeline}\n`;
+                    waText += `*Category:* ${category}\n*Subject:* ${subject}\n\n*Message:*\n${message}`;
+                    const waNumber = "919390923235"; // Indian country code +91 added
+                    const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waText)}`;
+                    
+                    setTimeout(() => {
+                        window.open(waUrl, '_blank');
+                        document.getElementById('form-content').style.display = 'none';
+                        document.getElementById('success-state').style.display = 'block';
+                        btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg><span>Send Message</span>';
+                    }, 600);
+                });
+            </script>
+
+
+        </section>
+
+        <!-- 4. Profiles Section -->
+        <section class="profiles-section">
+            <h3>Professional Profiles</h3>
+            <div class="profiles-grid">
+                <a href="https://github.com/nithya-lekhana" target="_blank" class="profile-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    <span class="profile-name">GitHub</span>
+                    <span class="profile-desc">View repositories</span>
+                </a>
+                <a href="https://linkedin.com/in/nithya-lekhana" target="_blank" class="profile-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    <span class="profile-name">LinkedIn</span>
+                    <span class="profile-desc">Professional profile</span>
+                </a>
+                <a href="#" target="_blank" class="profile-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    <span class="profile-name">LeetCode</span>
+                    <span class="profile-desc">Coding profile</span>
+                </a>
+                <a href="#" target="_blank" class="profile-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                    <span class="profile-name">HackerRank</span>
+                    <span class="profile-desc">Certificates</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 5. What Can I Help With -->
+        <section class="help-section">
+            <h3 style="text-align: center; font-size: 2rem; margin-bottom: 32px;">What Can I Help With?</h3>
+            <div class="help-tags">
+                <span class="help-tag">Software Development</span>
+                <span class="help-tag">Full Stack Projects</span>
+                <span class="help-tag">AI Projects</span>
+                <span class="help-tag">College Projects</span>
+                <span class="help-tag">Open Source</span>
+                <span class="help-tag">Technical Documentation</span>
+                <span class="help-tag">Portfolio Reviews</span>
+                <span class="help-tag">Web Development</span>
+            </div>
+        </section>
+
+        <!-- 6. FAQ Section -->
+        <section class="faq-section">
+            <h3 style="text-align: center; font-size: 2rem; margin-bottom: 32px;">Frequently Asked Questions</h3>
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <span class="faq-q">Are you available for internships?</span>
+                    <span class="faq-a">YES</span>
+                </div>
+                <div class="faq-card">
+                    <span class="faq-q">Can we collaborate?</span>
+                    <span class="faq-a">YES</span>
+                </div>
+                <div class="faq-card">
+                    <span class="faq-q">Can I view your GitHub?</span>
+                    <span class="faq-a">YES</span>
+                </div>
+                <div class="faq-card">
+                    <span class="faq-q">Can I download your resume?</span>
+                    <span class="faq-a">YES</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Mega Footer Overrides appended from template -->
+    <footer class="mega-footer">
+        <div class="mega-footer-container">
+            <!-- Section 1: CTA Banner -->
+            <div class="mf-cta-banner">
+                <div class="mf-cta-text">
+                    <h3>Interested in building something meaningful?</h3>
+                    <div style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin-top: 12px; margin-bottom: 24px; line-height: 1.6;">
+                        I'm always excited to work on innovative software projects, contribute to open source, and connect with fellow developers.
+                    </div>
+                </div>
+                <div class="mf-cta-actions">
+                    <a href="contact.html" class="hub-btn hub-btn-primary">Let's Connect</a>
+                </div>
+            </div>
+
+            <!-- Sections 2-5: Main Grid -->
+            <div class="mf-grid-main" style="margin-bottom: 32px;">
+                <!-- Col 1: Personal Card -->
+                <div class="mf-personal">
+                    <div class="logo" style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+                        <img src="icon_nobg.png" alt="Logo" width="48" height="48" style="border-radius: 50%; object-fit: cover; background: var(--primary); padding: 3px; box-shadow: 0 4px 12px rgba(112, 71, 235, 0.2);">
+                        <span style="font-size: 1.5rem; font-weight: 700;">Nithya Lekhana</span>
+                    </div>
+                    <p style="font-weight: 600; color: var(--text-main); margin-bottom: 8px;">Computer Science Engineering Student</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">Computer Science Engineering student passionate about software engineering, full-stack development, and artificial intelligence. Dedicated to building impactful digital solutions through clean code, thoughtful design, and continuous learning.</p>
+                    <p style="font-size: 0.85rem; margin-top: 8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Hyderabad, India</p>
+                    <div class="mf-status">
+                        <div class="mf-status-dot"></div> Available for Internship
+                    </div>
+                    <div style="display:flex; gap:16px;">
+                        <a href="https://github.com/nithya-lekhana" target="_blank" style="color: var(--text-muted);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                        <a href="https://linkedin.com/in/nithya-lekhana" target="_blank" style="color: var(--text-muted);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                        <a href="mailto:nithyalekhana04@gmail.com" style="color: var(--text-muted);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+                    </div>
+                </div>
+                
+                <!-- Col 2: Explore -->
+                <div class="mf-col">
+                    <h4>Explore</h4>
+                    <ul class="mf-link-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="resume.html">Experience & Education</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="skills.html">Skills & Achievements</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Projects -->
+                <div class="mf-col">
+                    <h4>Projects</h4>
+                    <ul class="mf-link-list">
+                        <li><a href="projects.html">Featured Projects</a></li>
+                        <li><a href="https://github.com/nithya-lekhana?tab=repositories" target="_blank">All Repositories</a></li>
+                        <li><a href="projects.html">Open Source</a></li>
+                        <li><a href="projects.html">Case Studies</a></li>
+                        <li><a href="projects.html">Most Starred</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Resources -->
+                <div class="mf-col">
+                    <h4>Resources</h4>
+                    <ul class="mf-link-list">
+                        <li><a href="resume.html">Resume</a></li>
+                        <li><a href="skills.html">Certificates</a></li>
+                        <li><a href="blog.html">Blog & Articles</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="awards.html">Downloads</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="mf-bottom" style="border-top: 1px solid var(--border-color); padding-top: 32px;">
+                <div>
+                    &copy; 2026 Nithya Lekhana.<br>
+                    <span style="font-size: 0.85rem; margin-top: 8px; display: inline-block;">Thanks for visiting my portfolio. Let's create something impactful together.</span>
+                </div>
+                <div class="mf-bottom-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Accessibility</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Nithya Lekhana</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+
+    <header class="navbar-wrapper">
+        <div class="container navbar-inner">
+            <div class="logo">
+                <img src="icon_nobg.png" alt="Logo" width="32" height="32" style="border-radius: 50%; object-fit: cover; background: var(--primary); padding: 2px;">
+                <span>Nithya Lekhana</span>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="services.html">Services</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle">More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                    <div class="dropdown-menu">
+                        <a href="resume.html">Resume</a>
+                        <a href="skills.html">Skills & Certificates</a>
+                        <a href="awards.html">Awards</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="faq.html">FAQ</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary">Contact Me</a>
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    
+    <main class="container" style="padding-top: 80px; padding-bottom: 120px;">
+        
+        <style>
+            /* Local Styles for Resume Page */
+            .res-hero { text-align: center; margin-bottom: 80px; }
+            .res-hero h1 {
+                font-size: 4rem;
+                font-weight: 800;
+                letter-spacing: -0.03em;
+                margin-bottom: 24px;
+                background: linear-gradient(to right, var(--primary-dark), var(--primary));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            .res-hero p {
+                font-size: 1.15rem;
+                color: var(--text-muted);
+                max-width: 800px;
+                margin: 0 auto 32px auto;
+                line-height: 1.8;
+            }
+            .res-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+            
+            /* Section Titles */
+            .res-section-title {
+                font-size: 2rem;
+                font-weight: 700;
+                color: var(--text-dark);
+                margin-bottom: 32px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                border-bottom: 2px solid var(--border);
+                padding-bottom: 12px;
+            }
+            .res-section { margin-bottom: 80px; }
+            
+            /* Typography Blocks */
+            .res-summary {
+                background: rgba(255, 255, 255, 0.7);
+                backdrop-filter: blur(12px);
+                border: 1px solid var(--border);
+                border-left: 6px solid var(--primary);
+                border-radius: 0 16px 16px 0;
+                padding: 40px;
+                box-shadow: var(--clay-shadow);
+                font-size: 1.1rem;
+                line-height: 1.8;
+                color: var(--text-muted);
+            }
+            
+            /* Quick Info Grid */
+            .quick-info-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 24px;
+            }
+            @media (max-width: 992px) { .quick-info-grid { grid-template-columns: repeat(2, 1fr); } }
+            @media (max-width: 600px) { .quick-info-grid { grid-template-columns: 1fr; } }
+            
+            .info-card {
+                background: var(--clay-bg);
+                border-radius: 16px;
+                padding: 24px;
+                box-shadow: var(--clay-shadow);
+                border: 1px solid rgba(255,255,255,0.5);
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            .info-label { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; }
+            .info-value { font-size: 1.1rem; color: var(--text-dark); font-weight: 600; }
+            
+            /* Education Card */
+            .edu-card {
+                background: white;
+                border: 1px solid var(--border);
+                border-radius: 24px;
+                padding: 48px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 48px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            }
+            @media (max-width: 768px) { .edu-card { grid-template-columns: 1fr; } }
+            
+            .edu-main h3 { font-size: 1.8rem; color: var(--primary-dark); margin-bottom: 8px; line-height: 1.3; }
+            .edu-main h4 { font-size: 1.25rem; color: var(--text-dark); margin-bottom: 24px; font-weight: 500; }
+            .edu-main p { font-size: 1.1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+            
+            .edu-coursework h5 { font-size: 1.1rem; color: var(--text-dark); margin-bottom: 16px; font-weight: 600; }
+            .edu-coursework ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+            .edu-coursework li { font-size: 0.95rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
+            
+            /* Skills Grid */
+            .skills-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 32px;
+            }
+            @media (max-width: 992px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
+            @media (max-width: 600px) { .skills-grid { grid-template-columns: 1fr; } }
+            
+            .skill-group {
+                background: var(--surface);
+                border-radius: 16px;
+                padding: 24px;
+                border: 1px solid var(--border);
+            }
+            .skill-group h4 { margin-bottom: 16px; color: var(--text-dark); font-size: 1.1rem; display: flex; align-items: center; gap: 8px; }
+            .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+            .skill-tag {
+                background: white;
+                color: var(--text-muted);
+                padding: 6px 12px;
+                border-radius: 8px;
+                font-size: 0.9rem;
+                font-weight: 500;
+                border: 1px solid var(--border);
+            }
+            
+            /* Experience / Projects List */
+            .exp-list { display: flex; flex-direction: column; gap: 32px; }
+            .exp-item {
+                background: white;
+                border-radius: 20px;
+                padding: 32px;
+                border: 1px solid var(--border);
+                box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+                position: relative;
+            }
+            .exp-item::before {
+                content: '';
+                position: absolute;
+                left: 0; top: 32px; bottom: 32px;
+                width: 4px;
+                background: var(--primary);
+                border-radius: 0 4px 4px 0;
+            }
+            .exp-item h3 { font-size: 1.4rem; color: var(--text-dark); margin-bottom: 12px; }
+            .exp-item p { color: var(--text-muted); line-height: 1.6; margin-bottom: 12px; }
+            
+            /* Minimal Lists (Featured, Certs) */
+            .minimal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+            @media (max-width: 768px) { .minimal-grid { grid-template-columns: 1fr; } }
+            .minimal-list { list-style: none; padding: 0; }
+            .minimal-list li {
+                padding: 16px;
+                background: var(--surface);
+                border-radius: 12px;
+                margin-bottom: 12px;
+                font-weight: 600;
+                color: var(--text-dark);
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                border: 1px solid transparent;
+                transition: border 0.2s;
+            }
+            .minimal-list li:hover { border-color: var(--primary); }
+            
+            /* Timeline */
+            .timeline {
+                position: relative;
+                max-width: 800px;
+                margin: 0 auto;
+                padding-left: 32px;
+            }
+            .timeline::before {
+                content: '';
+                position: absolute;
+                left: 0; top: 0; bottom: 0;
+                width: 4px;
+                background: var(--border);
+                border-radius: 4px;
+            }
+            .tl-item {
+                position: relative;
+                margin-bottom: 32px;
+                background: white;
+                padding: 24px;
+                border-radius: 16px;
+                border: 1px solid var(--border);
+                box-shadow: var(--clay-shadow);
+            }
+            .tl-item::before {
+                content: '';
+                position: absolute;
+                left: -40px; top: 28px;
+                width: 20px; height: 20px;
+                background: var(--primary);
+                border: 4px solid var(--bg);
+                border-radius: 50%;
+            }
+            .tl-year { font-weight: 800; color: var(--primary); font-size: 1.2rem; margin-bottom: 8px; }
+            .tl-content { font-size: 1.1rem; color: var(--text-dark); font-weight: 500; }
+            
+            /* Download CTA */
+            .download-box {
+                background: linear-gradient(135deg, rgba(112, 71, 235, 0.1), rgba(112, 71, 235, 0.05));
+                border: 1px solid rgba(112, 71, 235, 0.2);
+                border-radius: 24px;
+                padding: 64px 32px;
+                text-align: center;
+                margin-bottom: 80px;
+            }
+            .download-box h2 { font-size: 2.5rem; margin-bottom: 16px; color: var(--text-dark); }
+            .download-box p { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 32px auto; }
+            
+        </style>
+
+        <!-- 1. Hero Section -->
+        <section class="res-hero">
+            <h1>Digital Resume</h1>
+            <p>A comprehensive overview of my education, technical skills, projects, and achievements as I grow into a Software Engineer specializing in Artificial Intelligence and Machine Learning.</p>
+            <div class="res-actions">
+                <a href="assets/resume.pdf" target="_blank" class="btn btn-primary" style="padding: 16px 32px; border-radius: 100px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Download PDF
+                </a>
+                <a href="https://linkedin.com/in/nithya-lekhana" target="_blank" class="btn btn-secondary" style="padding: 16px 32px; border-radius: 100px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg> LinkedIn
+                </a>
+                <a href="https://github.com/nithya-lekhana" target="_blank" class="btn btn-secondary" style="padding: 16px 32px; border-radius: 100px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> GitHub
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. Professional Summary -->
+        <section class="res-section">
+            <h2 class="res-section-title">Professional Summary</h2>
+            <div class="res-summary">
+                <p style="margin-bottom: 16px; color: inherit;">I'm a Computer Science Engineering student specializing in Artificial Intelligence and Machine Learning at Woxsen University. I enjoy building scalable web applications, learning modern software engineering practices, and exploring AI-powered solutions.</p>
+                <p style="color: inherit;">My interests include software engineering, full-stack development, backend systems, artificial intelligence, and problem solving. I believe in learning through practical projects and continuously improving my technical skills by building real-world applications and documenting my journey.</p>
+            </div>
+        </section>
+
+        <!-- 3. Quick Information -->
+        <section class="res-section">
+            <h2 class="res-section-title">Quick Information</h2>
+            <div class="quick-info-grid">
+                <div class="info-card">
+                    <span class="info-label">Name</span>
+                    <span class="info-value">Nithya Lekhana</span>
+                </div>
+                <div class="info-card">
+                    <span class="info-label">Degree</span>
+                    <span class="info-value">B.Tech CSE</span>
+                </div>
+                <div class="info-card">
+                    <span class="info-label">Specialization</span>
+                    <span class="info-value">AI & Machine Learning</span>
+                </div>
+                <div class="info-card">
+                    <span class="info-label">University</span>
+                    <span class="info-value">Woxsen University</span>
+                </div>
+                <div class="info-card">
+                    <span class="info-label">Graduation</span>
+                    <span class="info-value">2029</span>
+                </div>
+                <div class="info-card">
+                    <span class="info-label">Location</span>
+                    <span class="info-value">Hyderabad, India</span>
+                </div>
+                <div class="info-card">
+                    <span class="info-label">Status</span>
+                    <span class="info-value" style="color: #16a34a;">Open to Internships</span>
+                </div>
+                <div class="info-card">
+                    <span class="info-label">Languages</span>
+                    <span class="info-value">English, Hindi, Telugu</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Education -->
+        <section class="res-section">
+            <h2 class="res-section-title">Education</h2>
+            <div class="edu-card">
+                <div class="edu-main">
+                    <h3>Bachelor of Technology (B.Tech)</h3>
+                    <h4>Computer Science Engineering</h4>
+                    <p><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg> Specialization: AI & Machine Learning</p>
+                    <p><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Woxsen University</p>
+                    <p><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 2025 &ndash; 2029</p>
+                </div>
+                <div class="edu-coursework">
+                    <h5>Relevant Coursework</h5>
+                    <ul>
+                        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Programming Fundamentals</li>
+                        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Data Structures</li>
+                        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Algorithms</li>
+                        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Database Systems</li>
+                        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Operating Systems</li>
+                        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Software Engineering</li>
+                        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Artificial Intelligence</li>
+                        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Machine Learning</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Technical Skills -->
+        <section class="res-section">
+            <h2 class="res-section-title" style="justify-content: space-between;">
+                <span>Technical Skills</span>
+                <a href="skills.html" class="btn btn-secondary" style="font-size: 1rem; padding: 10px 20px;">View Full Skills &rarr;</a>
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h4><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Programming</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h4><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg> Frameworks</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h4><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg> Databases</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">PostgreSQL (Learning)</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h4><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline><polyline points="7.5 19.79 7.5 14.6 3 12"></polyline><polyline points="21 12 16.5 14.6 16.5 19.79"></polyline><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg> AI / ML</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                    </div>
+                </div>
+                <div class="skill-group" style="grid-column: span 2;">
+                    <h4><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg> Tools</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">Figma</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Experience -->
+        <section class="res-section">
+            <h2 class="res-section-title">Experience & Academic Projects</h2>
+            <div class="exp-list">
+                <div class="exp-item">
+                    <h3>SkillSwap Platform</h3>
+                    <p>Designed and developed a student-focused skill exchange platform featuring intelligent matching, user profiles, reputation systems, and scheduling workflows.</p>
+                    <p>Focused on system architecture, frontend development, and deployment planning.</p>
+                </div>
+                <div class="exp-item">
+                    <h3>Personal Portfolio</h3>
+                    <p>Developed a responsive portfolio website showcasing projects, GitHub activity, technical skills, certifications, and blogs.</p>
+                    <p>Integrated dynamic GitHub data to automatically display repositories and statistics.</p>
+                </div>
+                <div class="exp-item">
+                    <h3>AI in Agriculture</h3>
+                    <p>Collaborated on an academic project exploring practical applications of Artificial Intelligence in modern agriculture through research and presentations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Minimal Grids (Projects, Certs, Achievements) -->
+        <div class="minimal-grid res-section">
+            <div>
+                <h2 class="res-section-title" style="justify-content: space-between;">
+                    <span>Featured Projects</span>
+                    <a href="projects.html" class="btn btn-secondary" style="font-size: 0.9rem; padding: 8px 16px;">View All</a>
+                </h2>
+                <ul class="minimal-list">
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg> SkillSwap Platform</li>
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg> Portfolio Website</li>
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg> GitHub Profile README</li>
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg> AI in Agriculture</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h2 class="res-section-title" style="justify-content: space-between;">
+                    <span>Certifications</span>
+                    <a href="awards.html" class="btn btn-secondary" style="font-size: 0.9rem; padding: 8px 16px;">View Certs</a>
+                </h2>
+                <ul class="minimal-list">
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> Python Programming</li>
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> Web Development</li>
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> Git & GitHub</li>
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> AI Fundamentals</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="minimal-grid res-section">
+            <div>
+                <h2 class="res-section-title">Achievements</h2>
+                <ul class="minimal-list">
+                    <li>Built multiple academic and personal software projects.</li>
+                    <li>Continuously expanding GitHub portfolio.</li>
+                    <li>Actively learning Software Engineering and AI.</li>
+                    <li>Maintaining technical documentation for projects.</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h2 class="res-section-title">Leadership & Activities</h2>
+                <ul class="minimal-list">
+                    <li>Academic Project Collaboration</li>
+                    <li>Technical Documentation</li>
+                    <li>Continuous Self-Learning</li>
+                    <li>Software Project Planning</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="minimal-grid res-section">
+            <div>
+                <h2 class="res-section-title">Languages</h2>
+                <div class="skill-tags">
+                    <span class="skill-tag" style="font-size: 1.1rem; padding: 12px 24px;">English</span>
+                    <span class="skill-tag" style="font-size: 1.1rem; padding: 12px 24px;">Hindi</span>
+                    <span class="skill-tag" style="font-size: 1.1rem; padding: 12px 24px;">Telugu</span>
+                </div>
+            </div>
+            
+            <div>
+                <h2 class="res-section-title">Interests</h2>
+                <p style="font-weight: 700; margin-bottom: 8px; color: var(--text-dark);">Technical</p>
+                <div class="skill-tags" style="margin-bottom: 24px;">
+                    <span class="skill-tag">Software Engineering</span>
+                    <span class="skill-tag">AI / ML</span>
+                    <span class="skill-tag">Full-Stack Dev</span>
+                    <span class="skill-tag">Backend Systems</span>
+                    <span class="skill-tag">Open Source</span>
+                </div>
+                <p style="font-weight: 700; margin-bottom: 8px; color: var(--text-dark);">Personal</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">Writing</span>
+                    <span class="skill-tag">Drawing</span>
+                    <span class="skill-tag">Technology</span>
+                    <span class="skill-tag">Movies</span>
+                    <span class="skill-tag">Learning New Skills</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. Timeline -->
+        <section class="res-section">
+            <h2 class="res-section-title">Resume Timeline</h2>
+            <div class="timeline">
+                <div class="tl-item">
+                    <div class="tl-year">2025</div>
+                    <div class="tl-content">Started B.Tech CSE (AI & ML) at Woxsen University</div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-year">Learning</div>
+                    <div class="tl-content">Mastered Programming Fundamentals & Data Structures</div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-year">Building</div>
+                    <div class="tl-content">Developed Personal Portfolio Website</div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-year">Building</div>
+                    <div class="tl-content">Developed SkillSwap Platform</div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-year">Exploring</div>
+                    <div class="tl-content">Diving into Artificial Intelligence & Machine Learning</div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-year">Current</div>
+                    <div class="tl-content">Seeking Internship Opportunities to apply skills</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Download Resume & CTA -->
+        <section class="download-box">
+            <h2>Download My Resume</h2>
+            <p>Get a detailed overview of my education, projects, technical skills, and experience in PDF format for offline viewing or printing.</p>
+            <div class="res-actions">
+                <a href="assets/resume.pdf" target="_blank" class="btn btn-primary" style="padding: 16px 32px; border-radius: 100px;">
+                    Download PDF
+                </a>
+                <a href="javascript:window.print()" class="btn btn-secondary" style="padding: 16px 32px; border-radius: 100px; background: white;">
+                    Print Resume
+                </a>
+            </div>
+        </section>
+
+        <section style="text-align: center; padding-top: 40px;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 24px; color: var(--text-dark);">Interested in my work?</h2>
+            <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 40px auto; line-height: 1.8;">I'm always open to internship opportunities, collaborations, and conversations about software engineering, full-stack development, and AI.</p>
+            <div class="res-actions">
+                <a href="contact.html" class="btn btn-primary">Contact Me</a>
+                <a href="projects.html" class="btn btn-secondary">View Projects</a>
+                <a href="https://github.com/nithya-lekhana" target="_blank" class="btn btn-secondary">Visit GitHub</a>
+            </div>
+        </section>
+        
+    </main>
+
+
+    
+    <!-- Premium Footer -->
+    
+
+    
+    <!-- Custom Footer -->
+    
+
+    
+    <!-- Dark Footer -->
+    
+
+    
+    <!-- Redesigned Footer -->
+    
+
+    
+    <!-- Minimalist Footer -->
+    
+
+    
+    <!-- Mega Footer Dashboard -->
+    <link rel="stylesheet" href="mega-footer.css">
+    
+    
+    
+    <!-- Mega Footer Dashboard -->
+    <link rel="stylesheet" href="mega-footer.css">
+    
+
+    
+    <!-- Mega Footer Dashboard -->
+    <link rel="stylesheet" href="mega-footer.css">
+    <footer class="mega-footer">
+        <div class="mega-footer-container">
+            <!-- Section 1: CTA Banner -->
+            <div class="mf-cta-banner">
+                <div class="mf-cta-text">
+                    <h3>Let's Build Something Amazing Together</h3>
+                    <div class="mf-cta-tags">
+                        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10.06 10.06 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Internships</span>
+                        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10.06 10.06 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Collaborations</span>
+                        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10.06 10.06 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Open Source</span>
+                        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10.06 10.06 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Research</span>
+                    </div>
+                </div>
+                <div class="mf-cta-actions">
+                    <a href="resume.html" class="btn">View Resume</a>
+                    <a href="contact.html" class="btn">Contact Me</a>
+                    <a href="mailto:nithyalekhana04@gmail.com" class="btn">Schedule Meeting</a>
+                </div>
+            </div>
+
+            <!-- Sections 2-5: Main Grid -->
+            <div class="mf-grid-main" style="margin-bottom: 32px;">
+                <!-- Col 1: Personal Card -->
+                <div class="mf-personal">
+                    <div class="logo" style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+                        <img src="icon_nobg.png" alt="Logo" width="48" height="48" style="border-radius: 50%; object-fit: cover; background: var(--primary); padding: 3px; box-shadow: 0 4px 12px rgba(112, 71, 235, 0.2);">
+                        <span style="font-size: 1.5rem; font-weight: 700;">Nithya Lekhana</span>
+                    </div>
+                    <p style="font-weight: 600; color: var(--text-dark); margin-bottom: 8px;">Computer Science Engineering Student</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">Computer Science Engineering student passionate about software engineering, full-stack development, and artificial intelligence. Dedicated to building impactful digital solutions through clean code, thoughtful design, and continuous learning.</p>
+                    <p style="font-size: 0.85rem; margin-top: 8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Hyderabad, India</p>
+                    <div class="mf-status">
+                        <div class="mf-status-dot"></div> Available for Internship
+                    </div>
+                    <div style="display:flex; gap:16px;">
+                        <a href="https://github.com/nithya-lekhana" target="_blank" style="color: var(--text-muted);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                        <a href="https://linkedin.com/in/nithya-lekhana" target="_blank" style="color: var(--text-muted);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                        <a href="mailto:nithyalekhana04@gmail.com" style="color: var(--text-muted);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+                    </div>
+                </div>
+                
+                <!-- Col 2: Explore -->
+                <div class="mf-col">
+                    <h4>Explore</h4>
+                    <ul class="mf-link-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="resume.html">Experience & Education</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="skills.html">Skills & Achievements</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Projects -->
+                <div class="mf-col">
+                    <h4>Projects</h4>
+                    <ul class="mf-link-list">
+                        <li><a href="projects.html">Featured Projects</a></li>
+                        <li><a href="https://github.com/nithya-lekhana?tab=repositories" target="_blank">All Repositories</a></li>
+                        <li><a href="projects.html">Open Source</a></li>
+                        <li><a href="projects.html">Case Studies</a></li>
+                        <li><a href="projects.html">Most Starred</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Resources -->
+                <div class="mf-col">
+                    <h4>Resources</h4>
+                    <ul class="mf-link-list">
+                        <li><a href="resume.html">Resume</a></li>
+                        <li><a href="skills.html">Certificates</a></li>
+                        <li><a href="blog.html">Blog & Articles</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="awards.html">Downloads</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="mf-bottom" style="border-top: 1px solid var(--border); padding-top: 32px;">
+                <div>
+                    &copy; 2026 Nithya Lekhana.<br>
+                    <span style="font-size: 0.75rem; margin-top: 8px; display: inline-block;">Portfolio Version v2.4.1 • Built with HTML/CSS/JS</span>
+                </div>
+                <div class="mf-bottom-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Accessibility</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

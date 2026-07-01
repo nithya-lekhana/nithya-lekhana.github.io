@@ -1,0 +1,220 @@
+/* ==========================================================================
+   HOME PAGE DASHBOARD STYLES
+   ========================================================================== */
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 32px;
+    color: var(--text-dark);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 32px;
+}
+.section-header .section-title {
+    margin-bottom: 0;
+}
+.view-all {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+.view-all:hover {
+    transform: translateX(4px);
+}
+
+/* Base Card Style */
+.clay-card {
+    background: var(--clay-bg);
+    border-radius: var(--radius-md);
+    padding: 32px;
+    box-shadow: var(--clay-shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.clay-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--clay-shadow-hover);
+}
+
+/* 1. Dashboard Stats */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+.stat-card {
+    background: var(--clay-bg);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    text-align: center;
+    box-shadow: var(--clay-shadow);
+}
+.stat-card h3 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+.stat-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+/* 2. About Preview */
+.about-card p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+}
+.about-actions {
+    display: flex;
+    gap: 16px;
+}
+
+/* 3. Current Focus */
+.focus-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.focus-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    background: var(--clay-bg);
+    border-radius: 100px;
+    box-shadow: var(--clay-shadow);
+}
+.focus-type {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+.focus-type.project { background: rgba(112, 71, 235, 0.1); color: var(--primary); }
+.focus-type.learning { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+.focus-title {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* 4. Featured Projects */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+.project-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+}
+.project-card p {
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    min-height: 48px;
+}
+.project-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* 5. GitHub Contribution */
+.gh-chart-container {
+    padding: 24px;
+    overflow-x: auto;
+}
+.gh-chart-container img {
+    width: 100%;
+    min-width: 700px;
+}
+
+/* 6. Skills Preview */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+.skill-category h3 {
+    margin-bottom: 12px;
+    color: var(--primary);
+}
+
+/* 7. Services Preview */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+.service-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.25rem;
+}
+
+/* 10. Timeline */
+.timeline-container {
+    position: relative;
+    padding-left: 32px;
+}
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+}
+.timeline-item {
+    position: relative;
+    margin-bottom: 32px;
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -37px;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    background: var(--primary);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--bg-white);
+}
+.timeline-year {
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+.timeline-content {
+    background: var(--clay-bg);
+    padding: 16px 24px;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--clay-shadow);
+    color: var(--text-dark);
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    .skills-grid, .services-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .stats-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+}

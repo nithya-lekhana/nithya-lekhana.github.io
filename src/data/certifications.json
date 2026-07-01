@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Python Programming",
+        "provider": "Coursera",
+        "date": "2026",
+        "credentialId": "CERT-12345",
+        "skills": ["Python", "Algorithms", "Data Structures"],
+        "url": "#"
+    },
+    {
+        "title": "Web Development Bootcamp",
+        "provider": "Udemy",
+        "date": "2025",
+        "credentialId": "UC-98765",
+        "skills": ["HTML", "CSS", "JavaScript", "React"],
+        "url": "#"
+    },
+    {
+        "title": "AI/ML Basics",
+        "provider": "IBM SkillsBuild",
+        "date": "2026",
+        "credentialId": "IBM-5555",
+        "skills": ["Machine Learning", "Data Analysis", "Python"],
+        "url": "#"
+    }
+]
